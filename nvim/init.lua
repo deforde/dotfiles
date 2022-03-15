@@ -36,6 +36,7 @@ packer.startup(function()
     'nvim-telescope/telescope.nvim',
     requires = { {'nvim-lua/plenary.nvim'}, { 'BurntSushi/ripgrep' } }
   }
+  use 'mfussenegger/nvim-lint'
   end
 )
 
@@ -50,6 +51,11 @@ vim.api.nvim_set_keymap('n', '<leader>ff', '<cmd>Telescope find_files<cr>', opts
 vim.api.nvim_set_keymap('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', opts)
 vim.api.nvim_set_keymap('n', '<leader>fb', '<cmd>Telescope buffers<cr>', opts)
 vim.api.nvim_set_keymap('n', '<leader>fh', '<cmd>Telescope help_tags<cr>', opts)
+vim.api.nvim_set_keymap('n', '<C-n>', '<cmd>tabn<cr>', opts)
+vim.api.nvim_set_keymap('n', '<C-t>', '<cmd>tabnew<cr>', opts)
+vim.api.nvim_set_keymap('n', '<C-x>', '<cmd>tabclose<cr>', opts)
+vim.api.nvim_set_keymap('n', '<C-b>', '<cmd>NERDTreeToggle<cr>', opts)
+
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -72,6 +78,7 @@ local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gh', '<cmd>ClangdSwitchSourceHeader<CR>', opts)
 end
 
 -- Add additional capabilities supported by nvim-cmp
@@ -148,6 +155,10 @@ cmp.setup {
   },
 }
 
+require('lint').linters_by_ft = {
+    python = { 'pylint', }
+}
+
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
@@ -172,4 +183,6 @@ vim.g.vscode_style = "dark"
 -- Disable nvim-tree background color
 vim.g.vscode_disable_nvimtree_bg = true
 vim.cmd[[colorscheme vscode]]
+
+vim.cmd([[au BufWritePost <buffer> lua require('lint').try_lint()]])
 
