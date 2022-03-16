@@ -24,6 +24,7 @@ packer.startup(function()
   local use = use
   -- add you plugins here like:
   -- use 'neovim/nvim-lspconfig'
+  use 'wbthomason/packer.nvim'
   use 'neovim/nvim-lspconfig'
   use 'Mofiqul/vscode.nvim'
   use 'ntpeters/vim-better-whitespace'
@@ -40,6 +41,7 @@ packer.startup(function()
   use 'mfussenegger/nvim-dap'
   use 'ray-x/lsp_signature.nvim'
   use 'nvim-treesitter/nvim-treesitter'
+  use 'nvim-lualine/lualine.nvim'
   end
 )
 
@@ -219,6 +221,8 @@ require'nvim-treesitter.configs'.setup {
     additional_vim_regex_highlighting = false,
   },
 }
+
+require('lualine').setup()
 
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
