@@ -38,6 +38,7 @@ packer.startup(function()
   }
   use 'mfussenegger/nvim-lint'
   use 'mfussenegger/nvim-dap'
+  use 'ray-x/lsp_signature.nvim'
   end
 )
 
@@ -52,9 +53,7 @@ vim.api.nvim_set_keymap('n', '<leader>ff', '<cmd>Telescope find_files<cr>', opts
 vim.api.nvim_set_keymap('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', opts)
 vim.api.nvim_set_keymap('n', '<leader>fb', '<cmd>Telescope buffers<cr>', opts)
 vim.api.nvim_set_keymap('n', '<leader>fh', '<cmd>Telescope help_tags<cr>', opts)
-vim.api.nvim_set_keymap('n', '<C-n>', '<cmd>tabnext<cr>', opts)
-vim.api.nvim_set_keymap('n', '<C-m>', '<cmd>tabprevious<cr>', opts)
-vim.api.nvim_set_keymap('n', '<C-t>', '<cmd>tabnew<cr>', opts)
+vim.api.nvim_set_keymap('n', '<C-n>', '<cmd>tabnew<cr>', opts)
 vim.api.nvim_set_keymap('n', '<C-x>', '<cmd>tabclose<cr>', opts)
 vim.api.nvim_set_keymap('n', '<C-b>', '<cmd>NERDTreeToggle<cr>', opts)
 vim.api.nvim_set_keymap('n', '<F5>', '<cmd>lua require\'dap\'.continue()<CR>', opts)
@@ -198,6 +197,13 @@ dap.configurations.c = {
   },
 }
 
+require'lsp_signature'.setup{
+    bind = true, -- This is mandatory, otherwise border config won't get registered.
+    handler_opts = {
+        border = "rounded"
+    }
+}
+
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
@@ -222,6 +228,7 @@ vim.g.vscode_style = "dark"
 -- Disable nvim-tree background color
 vim.g.vscode_disable_nvimtree_bg = true
 vim.cmd[[colorscheme vscode]]
+vim.wo.colorcolumn = "80"
 
 vim.cmd([[au BufWritePost <buffer> lua require('lint').try_lint()]])
 
