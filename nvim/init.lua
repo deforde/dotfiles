@@ -60,17 +60,17 @@ vim.api.nvim_set_keymap('n', '<C-n>', '<cmd>tabnew<cr>', opts)
 vim.api.nvim_set_keymap('n', '<C-x>', '<cmd>tabclose<cr>', opts)
 vim.api.nvim_set_keymap('n', '<C-b>', '<cmd>NERDTreeToggle<cr>', opts)
 vim.api.nvim_set_keymap('n', '<F5>', '<cmd>lua require\'dap\'.continue()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<F10>', '<cmd>lua require\'dap\'.step_over()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<F6>', '<cmd>lua require\'dap\'.step_over()<CR>', opts)
 vim.api.nvim_set_keymap('n', '<F11>', '<cmd>lua require\'dap\'.step_into()<CR>', opts)
 vim.api.nvim_set_keymap('n', '<F12>', '<cmd>lua require\'dap\'.step_out()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>b', '<cmd>lua require\'dap\'.toggle_breakpoint()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>B', '<cmd>lua require\'dap\'.set_breakpoint(vim.fn.input(\'Breakpoint condition: \'))<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>lp', '<cmd>lua require\'dap\'.set_breakpoint(nil, nil, vim.fn.input(\'Log point message: \'))<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>dr', '<cmd>lua require\'dap\'.repl.toggle({}, "vsplit")<CR><C-w>l', opts)
-vim.api.nvim_set_keymap('n', '<leader>dl', '<cmd>lua require\'dap\'.run_last()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>dc', '<cmd>lua require\'dap\'.terminate()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>di', '<cmd>lua require\'dap.ui.widgets\'.hover()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>d?', '<cmd>lua local widgets=require\'dap.ui.widgets\';widgets.centered_float(widgets.scopes)<CR>', opts)
+vim.api.nvim_set_keymap('n', '<space>b', '<cmd>lua require\'dap\'.toggle_breakpoint()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<space>B', '<cmd>lua require\'dap\'.set_breakpoint(vim.fn.input(\'Breakpoint condition: \'))<CR>', opts)
+vim.api.nvim_set_keymap('n', '<space>lp', '<cmd>lua require\'dap\'.set_breakpoint(nil, nil, vim.fn.input(\'Log point message: \'))<CR>', opts)
+vim.api.nvim_set_keymap('n', '<space>dr', '<cmd>lua require\'dap\'.repl.toggle({}, "vsplit")<CR><C-w>l', opts)
+vim.api.nvim_set_keymap('n', '<space>dl', '<cmd>lua require\'dap\'.run_last()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<space>dc', '<cmd>lua require\'dap\'.terminate()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<space>di', '<cmd>lua require\'dap.ui.widgets\'.hover()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<space>d?', '<cmd>lua local widgets=require\'dap.ui.widgets\';widgets.centered_float(widgets.scopes)<CR>', opts)
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -178,7 +178,7 @@ local dap = require('dap')
 dap.adapters.cppdbg = {
   id = 'cppdbg',
   type = 'executable',
-  command = '/home/danielforde/Apps/vscode-cpptools/extension/debugAdapters/bin/OpenDebugAD7',
+  command = '/home/danielforde/apps/vscode-cpptools/extension/debugAdapters/bin/OpenDebugAD7',
 }
 dap.configurations.c = {
   {
