@@ -3,6 +3,8 @@ local vim = vim
 local execute = vim.api.nvim_command
 local fn = vim.fn
 
+
+-- Bootstrap Packer START --
 -- ensure that packer is installed
 local install_path = fn.stdpath('data')..'/site/pack/packer/opt/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
@@ -18,7 +20,10 @@ local util = require'packer.util'
 packer.init({
   package_root = util.join_paths(vim.fn.stdpath('data'), 'site', 'pack')
 })
+-- Bootstrap Packer END --
 
+
+-- Add plugins START --
 --- startup and add configure plugins
 packer.startup(function()
   local use = use
@@ -45,34 +50,40 @@ packer.startup(function()
   use 'rcarriga/nvim-dap-ui'
   end
 )
+-- Add plugins END --
 
--- Mappings.
+
+-- General key mappings START --
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap=true, silent=true }
-vim.api.nvim_set_keymap('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
-vim.api.nvim_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
-vim.api.nvim_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<space>ff', '<cmd>Telescope find_files<cr>', opts)
-vim.api.nvim_set_keymap('n', '<space>fg', '<cmd>Telescope live_grep<cr>', opts)
-vim.api.nvim_set_keymap('n', '<space>fb', '<cmd>Telescope buffers<cr>', opts)
-vim.api.nvim_set_keymap('n', '<space>fh', '<cmd>Telescope help_tags<cr>', opts)
-vim.api.nvim_set_keymap('n', '<C-n>', '<cmd>tabnew<cr>', opts)
-vim.api.nvim_set_keymap('n', '<C-x>', '<cmd>tabclose<cr>', opts)
-vim.api.nvim_set_keymap('n', '<C-b>', '<cmd>NERDTreeToggle<cr>', opts)
-vim.api.nvim_set_keymap('n', '<F5>', '<cmd>lua require\'dap\'.continue()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<F6>', '<cmd>lua require\'dap\'.step_over()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<F11>', '<cmd>lua require\'dap\'.step_into()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<F12>', '<cmd>lua require\'dap\'.step_out()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<space>b', '<cmd>lua require\'dap\'.toggle_breakpoint()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<space>B', '<cmd>lua require\'dap\'.set_breakpoint(vim.fn.input(\'Breakpoint condition: \'))<CR>', opts)
-vim.api.nvim_set_keymap('n', '<space>lp', '<cmd>lua require\'dap\'.set_breakpoint(nil, nil, vim.fn.input(\'Log point message: \'))<CR>', opts)
-vim.api.nvim_set_keymap('n', '<space>dr', '<cmd>lua require\'dap\'.repl.toggle({}, "vsplit")<CR><C-w>l', opts)
-vim.api.nvim_set_keymap('n', '<space>dl', '<cmd>lua require\'dap\'.run_last()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<space>dc', '<cmd>lua require\'dap\'.terminate()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<space>di', '<cmd>lua require\'dap.ui.widgets\'.hover()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<space>d?', '<cmd>lua local widgets=require\'dap.ui.widgets\';widgets.centered_float(widgets.scopes)<CR>', opts)
+local set_keymap = vim.api.nvim_set_keymap
+set_keymap('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
+set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
+set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
+set_keymap('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
+set_keymap('n', '<space>ff', '<cmd>Telescope find_files<cr>', opts)
+set_keymap('n', '<space>fg', '<cmd>Telescope live_grep<cr>', opts)
+set_keymap('n', '<space>fb', '<cmd>Telescope buffers<cr>', opts)
+set_keymap('n', '<space>fh', '<cmd>Telescope help_tags<cr>', opts)
+set_keymap('n', '<C-n>', '<cmd>tabnew<cr>', opts)
+set_keymap('n', '<C-x>', '<cmd>tabclose<cr>', opts)
+set_keymap('n', '<C-b>', '<cmd>NERDTreeToggle<cr>', opts)
+set_keymap('n', '<F5>', '<cmd>lua require\'dap\'.continue()<CR>', opts)
+set_keymap('n', '<F6>', '<cmd>lua require\'dap\'.step_over()<CR>', opts)
+set_keymap('n', '<F11>', '<cmd>lua require\'dap\'.step_into()<CR>', opts)
+set_keymap('n', '<F12>', '<cmd>lua require\'dap\'.step_out()<CR>', opts)
+set_keymap('n', '<space>b', '<cmd>lua require\'dap\'.toggle_breakpoint()<CR>', opts)
+set_keymap('n', '<space>B', '<cmd>lua require\'dap\'.set_breakpoint(vim.fn.input(\'Breakpoint condition: \'))<CR>', opts)
+set_keymap('n', '<space>lp', '<cmd>lua require\'dap\'.set_breakpoint(nil, nil, vim.fn.input(\'Log point message: \'))<CR>', opts)
+set_keymap('n', '<space>dr', '<cmd>lua require\'dap\'.repl.toggle({}, "vsplit")<CR><C-w>l', opts)
+set_keymap('n', '<space>dl', '<cmd>lua require\'dap\'.run_last()<CR>', opts)
+set_keymap('n', '<space>dc', '<cmd>lua require\'dap\'.terminate()<CR>', opts)
+set_keymap('n', '<space>di', '<cmd>lua require\'dap.ui.widgets\'.hover()<CR>', opts)
+set_keymap('n', '<space>d?', '<cmd>lua local widgets=require\'dap.ui.widgets\';widgets.centered_float(widgets.scopes)<CR>', opts)
+-- General key mappings END --
 
+
+-- LSP configuration START --
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
@@ -101,9 +112,6 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
--- Use a loop to conveniently call 'setup' on multiple servers and
--- map buffer local keybindings when the language server attaches
-
 require'lspconfig'.clangd.setup {
     cmd = {
         "clangd",
@@ -123,10 +131,12 @@ require'lspconfig'.pyright.setup {
         debounce_text_changes = 150,
     },
 }
+-- LSP configuration END --
 
+
+-- Autocomplete configuration START --
 -- luasnip setup
 local luasnip = require 'luasnip'
-
 -- nvim-cmp setup
 local cmp = require 'cmp'
 cmp.setup {
@@ -170,11 +180,18 @@ cmp.setup {
     { name = 'luasnip' },
   },
 }
+-- Autoconfiguration END --
 
+
+-- Linter configuration START --
 require('lint').linters_by_ft = {
     python = { 'pylint', }
 }
+vim.cmd([[au BufWritePost <buffer> lua require('lint').try_lint()]])
+-- Linter configuration END --
 
+
+-- DAP configuration START --
 local dap = require('dap')
 dap.adapters.cppdbg = {
   id = 'cppdbg',
@@ -200,8 +217,10 @@ dap.configurations.c = {
     },
   },
 }
+-- DAP configuration END --
 
--- dap UI config START
+
+-- DAP UI configuration START --
 require("dapui").setup({
   icons = { expanded = "▾", collapsed = "▸" },
   mappings = {
@@ -254,8 +273,10 @@ end
 dap.listeners.before.event_exited["dapui_config"] = function()
   dapui.close()
 end
--- dap UI config END
+-- DAP UI configuration END --
 
+
+-- LSP signature configuration START --
 require'lsp_signature'.setup{
     bind = true, -- This is mandatory, otherwise border config won't get registered.
     handler_opts = {
@@ -266,7 +287,10 @@ require'lsp_signature'.setup{
     hint_enable = false,
     toggle_key = '<C-x>',
 }
+-- LSP signature configuration END --
 
+
+-- Treesitter configuration START --
 require'nvim-treesitter.configs'.setup {
   highlight = {
     enable = true,
@@ -277,9 +301,15 @@ require'nvim-treesitter.configs'.setup {
     additional_vim_regex_highlighting = false,
   },
 }
+-- Treesitter configuration END --
 
+
+-- Lualine configuration START --
 require('lualine').setup()
+-- Lualine configuration END --
 
+
+-- General VIM config START --
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
@@ -292,7 +322,10 @@ vim.opt.list = true
 vim.opt.listchars:append({ space = "⋅", eol = "¬", tab = "> " })
 
 vim.opt.number = true
+-- General VIM config END --
 
+
+-- Colour scheme config START --
 -- For dark theme
 vim.g.vscode_style = "dark"
 -- For light theme
@@ -305,6 +338,5 @@ vim.g.vscode_style = "dark"
 vim.g.vscode_disable_nvimtree_bg = true
 vim.cmd[[colorscheme vscode]]
 vim.wo.colorcolumn = "80"
-
-vim.cmd([[au BufWritePost <buffer> lua require('lint').try_lint()]])
+-- Colour scheme config END --
 
