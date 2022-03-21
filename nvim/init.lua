@@ -144,9 +144,9 @@ local has_words_before = function()
   return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 end
 cmp.setup {
-  completion = {
-      autocomplete = false,
-  },
+--  completion = {
+--      autocomplete = false,
+--  },
   snippet = {
     expand = function(args)
       require('luasnip').lsp_expand(args.body)
@@ -159,8 +159,8 @@ cmp.setup {
         cmp.select_next_item()
       elseif luasnip.expand_or_jumpable() then
         luasnip.expand_or_jump()
-      elseif has_words_before() then
-        cmp.complete()
+--      elseif has_words_before() then
+--        cmp.complete()
       else
         fallback()
       end
@@ -262,7 +262,6 @@ require("dapui").setup({
   },
   windows = { indent = 1 },
 })
-
 local dap, dapui = require("dap"), require("dapui")
 dap.listeners.after.event_initialized["dapui_config"] = function()
   dapui.open()
