@@ -42,12 +42,22 @@ packer.startup(function()
     'nvim-telescope/telescope.nvim',
     requires = { {'nvim-lua/plenary.nvim'}, { 'BurntSushi/ripgrep' } }
   }
-  use 'mfussenegger/nvim-lint'
   use 'mfussenegger/nvim-dap'
   use 'ray-x/lsp_signature.nvim'
   use 'nvim-treesitter/nvim-treesitter'
   use 'nvim-lualine/lualine.nvim'
   use 'rcarriga/nvim-dap-ui'
+--  use {
+--    "folke/trouble.nvim",
+--    requires = "kyazdani42/nvim-web-devicons",
+--    config = function()
+--      require("trouble").setup {
+--        -- your configuration comes here
+--        -- or leave it empty to use the default settings
+--        -- refer to the configuration section below
+--      }
+--    end
+--  }
   end
 )
 -- Add plugins END --
@@ -80,6 +90,12 @@ set_keymap('n', '<space>dl', '<cmd>lua require\'dap\'.run_last()<CR>', opts)
 set_keymap('n', '<space>dc', '<cmd>lua require\'dap\'.terminate()<CR>', opts)
 set_keymap('n', '<space>di', '<cmd>lua require\'dap.ui.widgets\'.hover()<CR>', opts)
 set_keymap('n', '<space>d?', '<cmd>lua local widgets=require\'dap.ui.widgets\';widgets.centered_float(widgets.scopes)<CR>', opts)
+-- set_keymap("n", "<leader>xx", "<cmd>Trouble<cr>", opts)
+-- set_keymap("n", "<leader>xw", "<cmd>Trouble workspace_diagnostics<cr>", opts)
+-- set_keymap("n", "<leader>xd", "<cmd>Trouble document_diagnostics<cr>", opts)
+-- set_keymap("n", "<leader>xl", "<cmd>Trouble loclist<cr>", opts)
+-- set_keymap("n", "<leader>xq", "<cmd>Trouble quickfix<cr>", opts)
+-- set_keymap("n", "gR", "<cmd>Trouble lsp_references<cr>", opts)
 -- General key mappings END --
 
 
@@ -181,14 +197,6 @@ cmp.setup {
   },
 }
 -- Autoconfiguration END --
-
-
--- Linter configuration START --
-require('lint').linters_by_ft = {
-    python = { 'pylint', }
-}
-vim.cmd([[au BufWritePost <buffer> lua require('lint').try_lint()]])
--- Linter configuration END --
 
 
 -- DAP configuration START --
