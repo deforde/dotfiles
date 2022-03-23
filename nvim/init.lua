@@ -96,6 +96,10 @@ set_keymap('n', '<space>d?', '<cmd>lua local widgets=require\'dap.ui.widgets\';w
 -- set_keymap("n", "<leader>xl", "<cmd>Trouble loclist<cr>", opts)
 -- set_keymap("n", "<leader>xq", "<cmd>Trouble quickfix<cr>", opts)
 -- set_keymap("n", "gR", "<cmd>Trouble lsp_references<cr>", opts)
+set_keymap('n', '<C-h>', '<cmd>wincmd h<CR>', opts)
+set_keymap('n', '<C-j>', '<cmd>wincmd j<CR>', opts)
+set_keymap('n', '<C-k>', '<cmd>wincmd k<CR>', opts)
+set_keymap('n', '<C-l>', '<cmd>wincmd l<CR>', opts)
 -- General key mappings END --
 
 
