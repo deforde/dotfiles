@@ -58,6 +58,7 @@ packer.startup(function()
       }
     end
   }
+  use 'ggandor/lightspeed.nvim'
   end
 )
 -- Add plugins END --
