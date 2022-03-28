@@ -359,7 +359,7 @@ vim.g.better_whitespace_enabled = 1
 vim.g.strip_whitespace_on_save = 1
 vim.g.strip_whitespace_confirm = 0
 vim.opt.list = true
-vim.opt.listchars:append({ space = "⋅", eol = "¬", tab = "> " })
+vim.opt.listchars:append({ trail = "⋅", tab = "> " })
 
 vim.opt.number = true
 -- General VIM config END --
