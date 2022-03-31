@@ -45,7 +45,12 @@ packer.startup(function()
   use 'mfussenegger/nvim-dap'
   use 'ray-x/lsp_signature.nvim'
   use 'nvim-treesitter/nvim-treesitter'
-  use 'nvim-lualine/lualine.nvim'
+  use {
+      'nvim-lualine/lualine.nvim',
+      config = function()
+        require("lualine").setup()
+      end
+  }
   use 'rcarriga/nvim-dap-ui'
   use {
     "folke/trouble.nvim",
@@ -344,11 +349,6 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 -- Treesitter configuration END --
-
-
--- Lualine configuration START --
-require('lualine').setup()
--- Lualine configuration END --
 
 
 -- General VIM config START --
