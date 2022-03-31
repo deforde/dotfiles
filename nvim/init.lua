@@ -356,6 +356,7 @@ vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
 vim.opt.expandtab = true
+vim.opt.clipboard = 'unnamedplus' -- Use Linux system clipboard
 
 vim.g.better_whitespace_enabled = 1
 vim.g.strip_whitespace_on_save = 1
