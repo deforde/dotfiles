@@ -364,6 +364,8 @@ vim.opt.list = true
 vim.opt.listchars:append({ trail = "⋅", tab = "> " })
 
 vim.opt.number = true
+
+vim.api.nvim_exec([[ autocmd TermOpen * startinsert ]], false)
 -- General VIM config END --
 
 
