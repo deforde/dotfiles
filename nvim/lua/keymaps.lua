@@ -1,5 +1,7 @@
 local opts = { noremap=true, silent=true }
 local set_keymap = vim.api.nvim_set_keymap
+-- Term
+set_keymap("t", "<space><Esc>", "<C-\\><C-n>", opts)
 -- Windows
 set_keymap("n", "<C-h>", "<cmd>wincmd h<CR>", opts)
 set_keymap("n", "<C-j>", "<cmd>wincmd j<CR>", opts)
