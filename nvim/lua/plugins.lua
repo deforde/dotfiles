@@ -61,7 +61,12 @@ packer.startup(function(use)
       require("trouble").setup()
     end
   }
-  use "ggandor/lightspeed.nvim"
+  use {
+      "ggandor/leap.nvim",
+      config = function()
+          require("leap").set_default_keymaps()
+      end
+  }
   use {
     "numToStr/Comment.nvim",
     config = function()

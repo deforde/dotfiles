@@ -1,7 +1,7 @@
 local opts = { noremap=true, silent=true }
 local set_keymap = vim.api.nvim_set_keymap
 -- Term
-set_keymap("t", "<space><Esc>", "<C-\\><C-n>", opts)
+set_keymap("t", "<C-\\><C-\\>", "<C-\\><C-n>", opts)
 -- Windows
 set_keymap("n", "<C-h>", "<cmd>wincmd h<CR>", opts)
 set_keymap("n", "<C-j>", "<cmd>wincmd j<CR>", opts)
@@ -26,7 +26,7 @@ set_keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
 set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
 set_keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
 set_keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-set_keymap("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+set_keymap("n", "gk", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 set_keymap("n", "<space>wa", "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>", opts)
 set_keymap("n", "<space>wr", "<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>", opts)
 set_keymap("n", "<space>wl", "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>", opts)
