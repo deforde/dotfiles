@@ -6,6 +6,7 @@ vim.opt.clipboard = "unnamedplus"
 vim.g.better_whitespace_enabled = 1
 vim.g.strip_whitespace_on_save = 1
 vim.g.strip_whitespace_confirm = 0
+vim.opt.laststatus = 3
 vim.opt.list = true
 vim.opt.listchars:append({ trail = "⋅", tab = "> " })
 vim.opt.number = true
