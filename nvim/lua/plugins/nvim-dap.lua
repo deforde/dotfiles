@@ -1,13 +1,9 @@
 local dap = require("dap")
+
 dap.adapters.cppdbg = {
   id = "cppdbg",
   type = "executable",
   command = "/home/danielforde/apps/vscode-cpptools/extension/debugAdapters/bin/OpenDebugAD7",
-}
-dap.adapters.python = {
-  type = "executable";
-  command = "/usr/bin/python3";
-  args = { "-m", "debugpy.adapter" };
 }
 dap.configurations.c = {
   {
@@ -28,11 +24,17 @@ dap.configurations.c = {
     },
   },
 }
+
+dap.adapters.python = {
+  type = "executable";
+  command = "/usr/bin/python3";
+  args = { "-m", "debugpy.adapter" };
+}
 dap.configurations.python = {
   {
+    name = "Launch file";
     type = "python";
     request = "launch";
-    name = "Launch file";
     program = "${file}";
     pythonPath = function()
       local cwd = vim.fn.getcwd()
