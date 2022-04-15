@@ -48,12 +48,12 @@ packer.startup(function(use)
         require "plugins.lualine"
       end
   }
-  use {
-      "rcarriga/nvim-dap-ui",
-      config = function()
-          require "plugins.nvim-dap-ui"
-      end
-  }
+  -- use {
+  --     "rcarriga/nvim-dap-ui",
+  --     config = function()
+  --         require "plugins.nvim-dap-ui"
+  --     end
+  -- }
   use {
     "folke/trouble.nvim",
     requires = "kyazdani42/nvim-web-devicons",
@@ -74,6 +74,18 @@ packer.startup(function(use)
     end
   }
   use "tpope/vim-surround"
+  use {
+    "lukas-reineke/indent-blankline.nvim",
+    config = function()
+      require("indent_blankline").setup()
+    end
+  }
+  use {
+    "lewis6991/gitsigns.nvim",
+    config = function()
+      require("gitsigns").setup()
+    end
+}
   end
 )
 
