@@ -25,6 +25,13 @@ packer.startup(function(use)
     requires = { {"nvim-lua/plenary.nvim"}, { "BurntSushi/ripgrep" } }
   }
   use {
+    "nvim-telescope/telescope-fzf-native.nvim",
+    run = "make",
+    config = function()
+        require "telescope".load_extension "fzf"
+    end
+  }
+  use {
       "mfussenegger/nvim-dap",
       config = function()
           require "plugins.nvim-dap"
@@ -87,6 +94,7 @@ packer.startup(function(use)
     end
   }
   use "tpope/vim-fugitive"
+  use "ludovicchabant/vim-gutentags"
   end
 )
 
