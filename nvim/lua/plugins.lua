@@ -85,7 +85,8 @@ packer.startup(function(use)
     config = function()
       require("gitsigns").setup()
     end
-}
+  }
+  use "tpope/vim-fugitive"
   end
 )
 
