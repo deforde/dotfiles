@@ -55,12 +55,12 @@ packer.startup(function(use)
         require "plugins.lualine"
       end
   }
-  -- use {
-  --     "rcarriga/nvim-dap-ui",
-  --     config = function()
-  --         require "plugins.nvim-dap-ui"
-  --     end
-  -- }
+  use {
+      "rcarriga/nvim-dap-ui",
+      config = function()
+          require "plugins.nvim-dap-ui"
+      end
+  }
   use {
     "folke/trouble.nvim",
     requires = "kyazdani42/nvim-web-devicons",
