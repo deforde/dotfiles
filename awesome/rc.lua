@@ -14,6 +14,9 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
+-- Lain
+local lain  = require("lain")
+local markup = lain.util.markup
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
@@ -53,7 +56,7 @@ beautiful.init("/home/danielforde/.config/awesome/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "kitty"
-editor = os.getenv("EDITOR") or "nvim"
+editor = "nvim"
 editor_cmd = terminal .. " -e " .. editor
 
 -- Default modkey.
@@ -65,19 +68,19 @@ modkey = "Mod4"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
-    awful.layout.suit.floating,
-    awful.layout.suit.tile,
-    awful.layout.suit.tile.left,
-    awful.layout.suit.tile.bottom,
-    awful.layout.suit.tile.top,
-    awful.layout.suit.fair,
-    awful.layout.suit.fair.horizontal,
+    -- awful.layout.suit.floating,
+    -- awful.layout.suit.tile,
+    -- awful.layout.suit.tile.left,
+    -- awful.layout.suit.tile.bottom,
+    -- awful.layout.suit.tile.top,
+    -- awful.layout.suit.fair,
+    -- awful.layout.suit.fair.horizontal,
     awful.layout.suit.spiral,
-    awful.layout.suit.spiral.dwindle,
-    awful.layout.suit.max,
-    awful.layout.suit.max.fullscreen,
-    awful.layout.suit.magnifier,
-    awful.layout.suit.corner.nw,
+    -- awful.layout.suit.spiral.dwindle,
+    -- awful.layout.suit.max,
+    -- awful.layout.suit.max.fullscreen,
+    -- awful.layout.suit.magnifier,
+    -- awful.layout.suit.corner.nw,
     -- awful.layout.suit.corner.ne,
     -- awful.layout.suit.corner.sw,
     -- awful.layout.suit.corner.se,
@@ -126,6 +129,79 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 -- {{{ Wibar
 -- Create a textclock widget
 mytextclock = wibox.widget.textclock()
+
+font = "UbuntuMono Nerd Font Regular"
+icon_dir = os.getenv("HOME") .. "/.config/awesome/icons"
+icon_battery = icon_dir .. "/battery.png"
+icon_battery_low = icon_dir .. "/battery_low.png"
+icon_battery_empty = icon_dir .. "/battery_empty.png"
+icon_ac = icon_dir .. "/ac.png"
+icon_vol = icon_dir .. "/vol.png"
+icon_vol_low = icon_dir .. "/vol_low.png"
+icon_vol_no = icon_dir .. "/vol_no.png"
+icon_vol_mute = icon_dir .. "/vol_mute.png"
+icon_net = icon_dir .. "/net.png"
+
+-- Battery
+local baticon = wibox.widget.imagebox(icon_battery)
+local bat = lain.widget.bat({
+    settings = function()
+        if bat_now.status and bat_now.status ~= "N/A" then
+            if bat_now.ac_status == 1 then
+                baticon:set_image(icon_ac)
+            elseif not bat_now.perc and tonumber(bat_now.perc) <= 5 then
+                baticon:set_image(icon_battery_empty)
+            elseif not bat_now.perc and tonumber(bat_now.perc) <= 15 then
+                baticon:set_image(icon_battery_low)
+            else
+                baticon:set_image(icon_battery)
+            end
+            widget:set_markup(markup.font(font, " " .. bat_now.perc .. "% "))
+        else
+            widget:set_markup(markup.font(font, " AC "))
+            baticon:set_image(icon_ac)
+        end
+    end
+})
+
+-- ALSA volume
+local volicon = wibox.widget.imagebox(icon_vol)
+local volume = lain.widget.alsa({
+    settings = function()
+        if volume_now.status == "off" then
+            volicon:set_image(icon_vol_mute)
+        elseif tonumber(volume_now.level) == 0 then
+            volicon:set_image(icon_vol_no)
+        elseif tonumber(volume_now.level) <= 50 then
+            volicon:set_image(icon_vol_low)
+        else
+            volicon:set_image(icon_vol)
+        end
+
+        widget:set_markup(markup.font(font, " " .. volume_now.level .. "% "))
+    end
+})
+volume.widget:buttons(awful.util.table.join(
+                               awful.button({}, 4, function ()
+                                     awful.util.spawn("amixer set Master 1%+")
+                                     volume.update()
+                               end),
+                               awful.button({}, 5, function ()
+                                     awful.util.spawn("amixer set Master 1%-")
+                                     volume.update()
+                               end)
+))
+
+-- Net
+local neticon = wibox.widget.imagebox(icon_net)
+local net = lain.widget.net({
+    settings = function()
+        widget:set_markup(markup.font(font,
+                          markup("#7AC82E", " " .. string.format("%06.1f", net_now.received))
+                          .. " " ..
+                          markup("#46A8C3", " " .. string.format("%06.1f", net_now.sent) .. " ")))
+    end
+})
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
@@ -228,9 +304,15 @@ awful.screen.connect_for_each_screen(function(s)
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            mykeyboardlayout,
+            -- mykeyboardlayout,
             wibox.widget.systray(),
             mytextclock,
+            volicon,
+            volume.widget,
+            baticon,
+            bat.widget,
+            neticon,
+            net.widget,
             s.mylayoutbox,
         },
     }
