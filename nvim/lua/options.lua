@@ -18,7 +18,6 @@ vim.opt.laststatus = 3
 vim.opt.list = true
 vim.opt.listchars:append({ trail = "⋅", tab = "> " })
 vim.opt.number = true
-vim.api.nvim_exec([[ autocmd TermOpen * startinsert ]], false)
 vim.g.vscode_style = "dark"
 vim.g.vscode_disable_nvimtree_bg = true
 vim.cmd[[colorscheme vscode]]
@@ -26,13 +25,18 @@ vim.wo.colorcolumn = "80"
 -- vim.wo.foldmethod = "expr"
 -- vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
 
+vim.api.nvim_create_autocmd("TermOpen", {
+  command = "startinsert",
+  pattern = "*",
+})
+
 -- Highlight on yank
-local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
-vim.api.nvim_create_autocmd('TextYankPost', {
+local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
+vim.api.nvim_create_autocmd("TextYankPost", {
   callback = function()
     vim.highlight.on_yank()
   end,
   group = highlight_group,
-  pattern = '*',
+  pattern = "*",
 })
 
