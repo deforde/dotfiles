@@ -1,5 +1,5 @@
-local opts = { noremap=true, silent=true }
-local set_keymap = vim.api.nvim_set_keymap
+local opts = { silent=true }
+local set_keymap = vim.keymap.set
 -- Term
 set_keymap("t", "<C-\\><C-\\>", "<C-\\><C-n>", opts)
 -- Windows
@@ -23,23 +23,23 @@ set_keymap("n", "<space>fg", "<cmd>Telescope live_grep<cr>", opts)
 set_keymap("n", "<space>fb", "<cmd>Telescope buffers<cr>", opts)
 set_keymap("n", "<space>fh", "<cmd>Telescope help_tags<cr>", opts)
 -- LSP
-set_keymap("n", "<space>e", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
-set_keymap("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
-set_keymap("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
-set_keymap("n", "<space>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
-set_keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
-set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-set_keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-set_keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-set_keymap("n", "gk", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-set_keymap("n", "<space>wa", "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>", opts)
-set_keymap("n", "<space>wr", "<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>", opts)
+set_keymap("n", "<space>e", vim.diagnostic.open_float, opts)
+set_keymap("n", "[d", vim.diagnostic.goto_prev, opts)
+set_keymap("n", "]d", vim.diagnostic.goto_next, opts)
+set_keymap("n", "<space>q", vim.diagnostic.setloclist, opts)
+set_keymap("n", "gD", vim.lsp.buf.declaration, opts)
+set_keymap("n", "gd", vim.lsp.buf.definition, opts)
+set_keymap("n", "K", vim.lsp.buf.hover, opts)
+set_keymap("n", "gi", vim.lsp.buf.implementation, opts)
+set_keymap("n", "gk", vim.lsp.buf.signature_help, opts)
+set_keymap("n", "<space>wa", vim.lsp.buf.add_workspace_folder, opts)
+set_keymap("n", "<space>wr", vim.lsp.buf.remove_workspace_folder, opts)
 set_keymap("n", "<space>wl", "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>", opts)
-set_keymap("n", "<space>D", "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
-set_keymap("n", "<space>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
-set_keymap("n", "<space>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
-set_keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
-set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+set_keymap("n", "<space>D", vim.lsp.buf.type_definition, opts)
+set_keymap("n", "<space>rn", vim.lsp.buf.rename, opts)
+set_keymap("n", "<space>ca", vim.lsp.buf.code_action, opts)
+set_keymap("n", "gr", vim.lsp.buf.references, opts)
+set_keymap("n", "<space>f", vim.lsp.buf.formatting, opts)
 set_keymap("n", "gh", "<cmd>ClangdSwitchSourceHeader<CR>", opts)
 -- DAP
 set_keymap("n", "<F5>", "<cmd>lua require\"dap\".continue()<CR>", opts)
