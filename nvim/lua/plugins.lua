@@ -56,6 +56,7 @@ require("packer").startup(function(use)
           require "plugins.nvim-treesitter"
       end
   }
+  use "nvim-treesitter/nvim-treesitter-textobjects"
   use {
       "nvim-lualine/lualine.nvim",
       config = function()
