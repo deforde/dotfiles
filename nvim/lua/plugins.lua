@@ -9,24 +9,28 @@ vim.api.nvim_create_autocmd("BufWritePost", { command = "source <afile> | Packer
 
 require("packer").startup(function(use)
   use "wbthomason/packer.nvim"
+  use "Mofiqul/vscode.nvim"
+  use "ntpeters/vim-better-whitespace"
+  use "hrsh7th/cmp-nvim-lsp"
+  use "saadparwaiz1/cmp_luasnip"
+  use "L3MON4D3/LuaSnip"
+  use "preservim/nerdtree"
+  use "tpope/vim-surround"
+  use "tpope/vim-fugitive"
+  use "ludovicchabant/vim-gutentags"
+  use "nvim-treesitter/nvim-treesitter-textobjects"
   use {
       "neovim/nvim-lspconfig",
       config = function()
           require "plugins.nvim-lspconfig"
       end
   }
-  use "Mofiqul/vscode.nvim"
-  use "ntpeters/vim-better-whitespace"
-  use "hrsh7th/cmp-nvim-lsp"
-  use "saadparwaiz1/cmp_luasnip"
   use {
       "hrsh7th/nvim-cmp",
       config = function()
           require "plugins.nvim-cmp"
       end
   }
-  use "L3MON4D3/LuaSnip"
-  use "preservim/nerdtree"
   use {
     "nvim-telescope/telescope.nvim",
     requires = { {"nvim-lua/plenary.nvim"}, { "BurntSushi/ripgrep" } }
@@ -56,7 +60,6 @@ require("packer").startup(function(use)
           require "plugins.nvim-treesitter"
       end
   }
-  use "nvim-treesitter/nvim-treesitter-textobjects"
   use {
       "nvim-lualine/lualine.nvim",
       config = function()
@@ -88,7 +91,6 @@ require("packer").startup(function(use)
         require("Comment").setup()
     end
   }
-  use "tpope/vim-surround"
   use {
     "lukas-reineke/indent-blankline.nvim",
     config = function()
@@ -101,8 +103,6 @@ require("packer").startup(function(use)
       require "plugins.gitsigns"
     end
   }
-  use "tpope/vim-fugitive"
-  use "ludovicchabant/vim-gutentags"
   end
 )
 
