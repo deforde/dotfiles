@@ -103,6 +103,12 @@ require("packer").startup(function(use)
       require "plugins.gitsigns"
     end
   }
+  use {
+    "nvim-orgmode/orgmode",
+    config = function()
+      require "plugins.orgmode"
+    end
+  }
   end
 )
 

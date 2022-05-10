@@ -1,5 +1,7 @@
 local opts = { silent=true }
 local set_keymap = vim.keymap.set
+-- General
+set_keymap({"n", "v"}, "<Space>", "<Nop>", opts)
 -- Term
 set_keymap("t", "<C-\\><C-\\>", "<C-\\><C-n>", opts)
 -- Windows
