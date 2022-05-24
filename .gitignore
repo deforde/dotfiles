@@ -1,3 +1,5 @@
 nvim/plugin/
 tags
+tags.lock
+tags.temp
 
