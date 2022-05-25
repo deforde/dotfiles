@@ -20,7 +20,7 @@ set_keymap("n", "<C-x>", "<cmd>tabclose<cr>", opts)
 -- NERDTree
 set_keymap("n", "<C-b>", "<cmd>NERDTreeToggle<cr>", opts)
 -- Telescope
-set_keymap("n", "<space>ff", function() return require("telescope.builtin").find_files() end, {silent=true, desc="Telescope find files"})
+set_keymap("n", "<space>ff", function() return require("telescope.builtin").find_files({previewer=false}) end, {silent=true, desc="Telescope find files"})
 set_keymap("n", "<space>fg", function() return require("telescope.builtin").live_grep() end, {silent=true, desc="Telescope live grep"})
 set_keymap("n", "<space>fb", function() return require("telescope.builtin").buffers() end, {silent=true, desc="Telescope buffers"})
 set_keymap("n", "<space>fh", function() return require("telescope.builtin").help_tags() end, {silent=true, desc="Telescope help tags"})
