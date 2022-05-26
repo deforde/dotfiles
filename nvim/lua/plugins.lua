@@ -9,7 +9,7 @@ vim.api.nvim_create_autocmd("BufWritePost", { command = "source <afile> | Packer
 
 require("packer").startup(function(use)
   use "wbthomason/packer.nvim"
-  -- use "Mofiqul/vscode.nvim"
+  use "Mofiqul/vscode.nvim"
   use "eemed/sitruuna.vim"
   use "ntpeters/vim-better-whitespace"
   use "hrsh7th/cmp-nvim-lsp"

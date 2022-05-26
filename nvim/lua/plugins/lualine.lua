@@ -53,8 +53,8 @@ local sitruuna = {
 
 require"lualine".setup {
   options = {
-      -- theme = "vscode",
-      theme = sitruuna,
+      theme = "vscode",
+      -- theme = sitruuna,
       globalstatus = true,
   },
 }

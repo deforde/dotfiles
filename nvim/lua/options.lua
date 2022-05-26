@@ -20,10 +20,10 @@ vim.opt.laststatus = 3
 vim.opt.list = true
 vim.opt.listchars:append({ trail = "⋅", tab = "> " })
 vim.opt.number = true
--- vim.g.vscode_style = "dark"
--- vim.g.vscode_disable_nvimtree_bg = true
--- vim.cmd[[colorscheme vscode]]
-vim.cmd[[colorscheme sitruuna]]
+vim.g.vscode_style = "dark"
+vim.g.vscode_disable_nvimtree_bg = true
+vim.cmd[[colorscheme vscode]]
+-- vim.cmd[[colorscheme sitruuna]]
 vim.wo.colorcolumn = "80"
 -- vim.wo.foldmethod = "expr"
 -- vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
