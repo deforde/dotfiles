@@ -17,7 +17,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#585858"
 export PATH=/home/danielforde/dev/3rdparty/zig/zig-linux-x86_64-0.10.0-dev.2148+67c4b16d6:$PATH
 setxkbmap -option caps:ctrl_modifier -option grp:shifts_toggle
 killall xcape &> /dev/null
-xcape -e 'Caps_Lock=Escape'
+xcape -t 200 -e 'Caps_Lock=Escape'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
