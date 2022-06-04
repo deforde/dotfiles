@@ -1,4 +1,4 @@
-nvim/plugin/
+.config/nvim/plugin/
 tags
 tags.lock
 tags.temp
