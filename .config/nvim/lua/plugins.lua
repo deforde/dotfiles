@@ -22,6 +22,12 @@ require("packer").startup(function(use)
   use "ludovicchabant/vim-gutentags"
   use "nvim-treesitter/nvim-treesitter-textobjects"
   use {
+    "mickael-menu/zk-nvim",
+    config = function()
+      require("zk").setup()
+    end
+  }
+  use {
       "neovim/nvim-lspconfig",
       config = function()
           require "plugins.nvim-lspconfig"
@@ -105,12 +111,12 @@ require("packer").startup(function(use)
       require "plugins.gitsigns"
     end
   }
-  use {
-    "nvim-orgmode/orgmode",
-    config = function()
-      require "plugins.orgmode"
-    end
-  }
+  -- use {
+  --   "nvim-orgmode/orgmode",
+  --   config = function()
+  --     require "plugins.orgmode"
+  --   end
+  -- }
   end
 )
 
