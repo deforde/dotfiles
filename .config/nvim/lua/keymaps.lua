@@ -15,8 +15,8 @@ set_keymap("n", "<C-Left>", "<cmd>wincmd <lt><CR>", opts)
 set_keymap("n", "<C-Right>", "<cmd>wincmd ><CR>", opts)
 set_keymap("n", "<C-q>", "<cmd>wincmd =<CR>", opts)
 -- Tabs
-set_keymap("n", "<C-n>", "<cmd>tabnew<cr>", opts)
-set_keymap("n", "<C-x>", "<cmd>tabclose<cr>", opts)
+-- set_keymap("n", "<C-n>", "<cmd>tabnew<cr>", opts)
+-- set_keymap("n", "<C-x>", "<cmd>tabclose<cr>", opts)
 -- NERDTree
 set_keymap("n", "<C-b>", "<cmd>NERDTreeToggle<cr>", opts)
 -- Telescope
