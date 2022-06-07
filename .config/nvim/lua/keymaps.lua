@@ -68,7 +68,6 @@ set_keymap("n", "<space>xq", "<cmd>Trouble quickfix<cr>", opts)
 set_keymap("n", "gR", "<cmd>Trouble lsp_references<cr>", opts)
 -- zk
 set_keymap("n", "<space>zn", "<cmd>ZkNew { title = vim.fn.input('Title: ') }<cr>", opts)
-set_keymap("n", "<space>zo", "<cmd>ZkNotes { sort = { 'modified' } }<cr>", opts)
-set_keymap("n", "<space>zt", "<cmd>ZkTags<cr>", opts)
-set_keymap("n", "<space>zf", "<cmd>ZkNotes { sort = { 'modified' }, match = vim.fn.input('Search: ') }<cr>", opts)
+set_keymap("n", "<space>zt", "<cmd>:Telescope zk tags<cr>", opts)
+set_keymap("n", "<space>zf", "<cmd>:Telescope zk notes<cr>", opts)
 

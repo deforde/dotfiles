@@ -22,9 +22,12 @@ require("packer").startup(function(use)
   use "ludovicchabant/vim-gutentags"
   use "nvim-treesitter/nvim-treesitter-textobjects"
   use {
-    "mickael-menu/zk-nvim",
+    -- "mickael-menu/zk-nvim",
+    "deforde/zk-nvim",
+    branch = "telescope-extension-tags",
     config = function()
       require("zk").setup()
+      require "telescope".load_extension "zk"
     end
   }
   use {
