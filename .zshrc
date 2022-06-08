@@ -13,7 +13,7 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR='neovim'
 export TTS_UNITY_DIR="$HOME/dev/3rdparty/Unity/"
 export PATH=$HOME/dev/3rdparty/zig/zig-linux-x86_64-0.10.0-dev.2148+67c4b16d6:$HOME/dev/3rdparty/zk:$PATH
-export ZK_NOTEBOOK_DIR=$HOME/Documents/zettelkasten
+export ZK_NOTEBOOK_DIR=$HOME/dev/deforde/notes
 
 alias python='python3.8'
 alias ll='la -la'
