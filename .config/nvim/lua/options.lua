@@ -45,7 +45,7 @@ vim.api.nvim_create_autocmd("TermOpen", {
 
 vim.api.nvim_create_autocmd("BufEnter", {
   command = "setf groovy",
-  pattern = "Jenkinsfile",
+  pattern = "Jenkinsfile*",
 })
 
 -- Highlight on yank
