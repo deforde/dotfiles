@@ -66,7 +66,8 @@ require("packer").startup(function(use)
       "nvim-treesitter/nvim-treesitter",
       config = function()
           require "plugins.nvim-treesitter"
-      end
+      end,
+      run = ":TSUpdate"
   }
   use {
       "nvim-lualine/lualine.nvim",

@@ -1,8 +1,8 @@
 require"nvim-treesitter.configs".setup {
   highlight = {
     enable = true,
-    disable = {"org"},
-    additional_vim_regex_highlighting = {"org"},
+    -- disable = {"org"},
+    -- additional_vim_regex_highlighting = {"org"},
   },
   incremental_selection = {
     enable = true,
@@ -49,6 +49,6 @@ require"nvim-treesitter.configs".setup {
       },
     },
   },
-  ensure_installed = {"org"},
+  -- ensure_installed = {"org"},
 }
 
