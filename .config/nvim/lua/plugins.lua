@@ -10,7 +10,7 @@ vim.api.nvim_create_autocmd("BufWritePost", { command = "source <afile> | Packer
 require("packer").startup(function(use)
   use "wbthomason/packer.nvim"
   use "Mofiqul/vscode.nvim"
-  use "eemed/sitruuna.vim"
+  -- use "eemed/sitruuna.vim"
   use "ntpeters/vim-better-whitespace"
   use "hrsh7th/cmp-nvim-lsp"
   use "saadparwaiz1/cmp_luasnip"
@@ -47,13 +47,25 @@ require("packer").startup(function(use)
     "nvim-telescope/telescope-fzf-native.nvim",
     run = "make",
     config = function()
-        require "telescope".load_extension "fzf"
+        require"telescope".load_extension"fzf"
+    end
+  }
+  use {
+    "nvim-telescope/telescope-dap.nvim",
+    config = function()
+        require"telescope".load_extension"dap"
     end
   }
   use {
       "mfussenegger/nvim-dap",
       config = function()
           require "plugins.nvim-dap"
+      end
+  }
+  use {
+      "theHamsta/nvim-dap-virtual-text",
+      config = function()
+          require"nvim-dap-virtual-text".setup()
       end
   }
   use {
