@@ -18,6 +18,7 @@ export ZK_NOTEBOOK_DIR=$HOME/dev/deforde/notes
 alias python='python3.8'
 alias ll='la -la'
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias gn='/usr/bin/git --git-dir=$ZK_NOTEBOOK_DIR/.git/ --work-tree=$ZK_NOTEBOOK_DIR'
 
 setxkbmap -option caps:ctrl_modifier -option grp:shifts_toggle
 killall xcape &> /dev/null
