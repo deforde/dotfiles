@@ -15,7 +15,7 @@ export TTS_UNITY_DIR="$HOME/dev/3rdparty/Unity/"
 export PATH=$HOME/dev/3rdparty/zig/zig-linux-x86_64-0.10.0-dev.2148+67c4b16d6:$HOME/dev/3rdparty/zk:$PATH
 export ZK_NOTEBOOK_DIR=$HOME/dev/deforde/notes
 
-alias python='python3.8'
+alias python='python3'
 alias ll='la -la'
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias gn='/usr/bin/git --git-dir=$ZK_NOTEBOOK_DIR/.git/ --work-tree=$ZK_NOTEBOOK_DIR'
