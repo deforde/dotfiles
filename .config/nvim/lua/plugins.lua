@@ -131,6 +131,12 @@ require("packer").startup(function(use)
       require "plugins.gitsigns"
     end
   }
+  use {
+    "folke/which-key.nvim",
+    config = function()
+      require("which-key").setup()
+    end
+  }
   -- use {
   --   "nvim-orgmode/orgmode",
   --   config = function()
