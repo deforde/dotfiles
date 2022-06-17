@@ -137,6 +137,13 @@ require("packer").startup(function(use)
       require("which-key").setup()
     end
   }
+  use {
+    "jose-elias-alvarez/null-ls.nvim",
+    requires = { "neovim/nvim-lspconfig", "nvim-lua/plenary.nvim" },
+    config = function()
+      require "plugins.null-ls"
+    end
+  }
   -- use {
   --   "nvim-orgmode/orgmode",
   --   config = function()
