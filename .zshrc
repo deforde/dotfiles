@@ -34,7 +34,7 @@ typeset -U path
 
 bindkey -v
 
-source "$HOME/.config/.zsh/antigen.zsh"
+source "$HOME/.config/zsh/antigen.zsh"
 antigen use oh-my-zsh
 antigen bundle git
 antigen bundle zsh-users/zsh-autosuggestions
