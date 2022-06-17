@@ -38,7 +38,8 @@ source "$HOME/.config/.zsh/antigen.zsh"
 antigen use oh-my-zsh
 antigen bundle git
 antigen bundle zsh-users/zsh-autosuggestions
-antigen theme spaceship-prompt/spaceship-prompt
+antigen theme robbyrussell
+# antigen theme spaceship-prompt/spaceship-prompt
 antigen apply
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#585858"
