@@ -20,6 +20,7 @@ require("packer").startup(function(use)
   use "tpope/vim-fugitive"
   use "ludovicchabant/vim-gutentags"
   use "nvim-treesitter/nvim-treesitter-textobjects"
+  use "ziglang/zig.vim"
   use {
     "mickael-menu/zk-nvim",
     config = function()
