@@ -9,7 +9,7 @@
 --   -- darker      = "#131515",
 --   black       = "#181a1b",
 --   -- darkgray    = "#1d2023",
---   darkgray  = "#242629",
+--   darkgray    = "#242629",
 --   -- darkgray    = "#4c5356",
 --   lightgray   = "#2D3032",
 --   darkgreen   = "#37ad82",
@@ -20,27 +20,27 @@
 --
 -- local sitruuna = {
 --   normal = {
---     a = {bg = colors.yellow, fg = colors.black, gui = 'bold'},
+--     a = {bg = colors.lightgray, fg = colors.yellow, gui = 'bold'},
 --     b = {bg = colors.darkgray, fg = colors.white},
 --     c = {bg = colors.black, fg = colors.white}
 --   },
 --   insert = {
---     a = {bg = colors.darkgreen, fg = colors.black, gui = 'bold'},
+--     a = {bg = colors.lightgray, fg = colors.darkgreen, gui = 'bold'},
 --     b = {bg = colors.darkgray, fg = colors.white},
 --     c = {bg = colors.black, fg = colors.white}
 --   },
 --   visual = {
---     a = {bg = colors.blue, fg = colors.black, gui = 'bold'},
+--     a = {bg = colors.lightgray, fg = colors.blue, gui = 'bold'},
 --     b = {bg = colors.darkgray, fg = colors.white},
 --     c = {bg = colors.black, fg = colors.white}
 --   },
 --   replace = {
---     a = {bg = colors.lightgreen, fg = colors.black, gui = 'bold'},
+--     a = {bg = colors.lightgray, fg = colors.lightgreen, gui = 'bold'},
 --     b = {bg = colors.darkgray, fg = colors.white},
 --     c = {bg = colors.black, fg = colors.white}
 --   },
 --   command = {
---     a = {bg = colors.purple, fg = colors.black, gui = 'bold'},
+--     a = {bg = colors.lightgray, fg = colors.purple, gui = 'bold'},
 --     b = {bg = colors.darkgray, fg = colors.white},
 --     c = {bg = colors.black, fg = colors.white}
 --   },
