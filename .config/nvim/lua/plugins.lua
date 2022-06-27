@@ -18,6 +18,7 @@ require("packer").startup(function(use)
   use "preservim/nerdtree"
   use "tpope/vim-surround"
   use "tpope/vim-fugitive"
+  use "tpope/vim-sleuth"
   use "ludovicchabant/vim-gutentags"
   use "nvim-treesitter/nvim-treesitter-textobjects"
   use "ziglang/zig.vim"
@@ -29,16 +30,16 @@ require("packer").startup(function(use)
     end
   }
   use {
-      "neovim/nvim-lspconfig",
-      config = function()
-          require "plugins.nvim-lspconfig"
-      end
+    "neovim/nvim-lspconfig",
+    config = function()
+        require "plugins.nvim-lspconfig"
+    end
   }
   use {
-      "hrsh7th/nvim-cmp",
-      config = function()
-          require "plugins.nvim-cmp"
-      end
+    "hrsh7th/nvim-cmp",
+    config = function()
+        require "plugins.nvim-cmp"
+    end
   }
   use {
     "nvim-telescope/telescope.nvim",
@@ -58,48 +59,48 @@ require("packer").startup(function(use)
     end
   }
   use {
-      "mfussenegger/nvim-dap",
-      config = function()
-          require "plugins.nvim-dap"
-      end
+    "mfussenegger/nvim-dap",
+    config = function()
+        require "plugins.nvim-dap"
+    end
   }
   use {
-      "mfussenegger/nvim-dap-python",
-      config = function()
-          require"dap-python".setup("~/.virtualenvs/debugpy/bin/python")
-          require"dap-python".test_runner = "pytest"
-      end
+    "mfussenegger/nvim-dap-python",
+    config = function()
+        require"dap-python".setup("~/.virtualenvs/debugpy/bin/python")
+        require"dap-python".test_runner = "pytest"
+    end
   }
   use {
-      "theHamsta/nvim-dap-virtual-text",
-      config = function()
-          require"nvim-dap-virtual-text".setup()
-      end
+    "theHamsta/nvim-dap-virtual-text",
+    config = function()
+        require"nvim-dap-virtual-text".setup()
+    end
   }
   use {
-      "ray-x/lsp_signature.nvim",
-      config = function()
-          require "plugins.lsp_signature"
-      end
+    "ray-x/lsp_signature.nvim",
+    config = function()
+        require "plugins.lsp_signature"
+    end
   }
   use {
-      "nvim-treesitter/nvim-treesitter",
-      config = function()
-          require "plugins.nvim-treesitter"
-      end,
-      run = ":TSUpdate"
+    "nvim-treesitter/nvim-treesitter",
+    config = function()
+        require "plugins.nvim-treesitter"
+    end,
+    run = ":TSUpdate"
   }
   use {
-      "nvim-lualine/lualine.nvim",
-      config = function()
-        require "plugins.lualine"
-      end
+    "nvim-lualine/lualine.nvim",
+    config = function()
+      require "plugins.lualine"
+    end
   }
   use {
-      "rcarriga/nvim-dap-ui",
-      config = function()
-          require "plugins.nvim-dap-ui"
-      end
+    "rcarriga/nvim-dap-ui",
+    config = function()
+        require "plugins.nvim-dap-ui"
+    end
   }
   use {
     "folke/trouble.nvim",
@@ -109,10 +110,10 @@ require("packer").startup(function(use)
     end
   }
   use {
-      "ggandor/leap.nvim",
-      config = function()
-          require("leap").set_default_keymaps()
-      end
+    "ggandor/leap.nvim",
+    config = function()
+        require("leap").set_default_keymaps()
+    end
   }
   use {
     "numToStr/Comment.nvim",
