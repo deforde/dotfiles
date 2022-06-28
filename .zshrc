@@ -7,6 +7,8 @@ export PATH=$HOME/dev/3rdparty/zig/zig-linux-x86_64-0.10.0-dev.2624+d506275a0:$H
 
 export ZK_NOTEBOOK_DIR=$HOME/dev/deforde/notes
 
+export DOCKER_BUILDKIT=1
+
 export ZDOTDIR="$HOME"
 export HISTFILE="$ZDOTDIR/.zsh_history"
 export HISTSIZE=10000
