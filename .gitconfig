@@ -15,3 +15,7 @@
 	required = true
 [url "ssh://git@bitbucket.org/"]
 	insteadOf = https://bitbucket.org/
+[includeIf "gitdir:~/dev/deforde/"]
+	path = ~/dev/deforde/.gitconfig
+[includeIf "gitdir:~/dev/3rdparty/"]
+	path = ~/dev/3rdparty/.gitconfig
