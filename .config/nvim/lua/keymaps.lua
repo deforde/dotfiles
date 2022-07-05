@@ -17,8 +17,6 @@ set_keymap("n", "<C-q>", "<cmd>wincmd =<CR>", opts)
 -- Tabs
 -- set_keymap("n", "<C-n>", "<cmd>tabnew<cr>", opts)
 -- set_keymap("n", "<C-x>", "<cmd>tabclose<cr>", opts)
--- NERDTree
-set_keymap("n", "<C-b>", "<cmd>NERDTreeToggle<cr>", opts)
 -- Telescope
 set_keymap("n", "<space>ff", function() return require("telescope.builtin").find_files({previewer=false}) end, {silent=true, desc="Telescope find files"})
 set_keymap("n", "<space>fg", function() return require("telescope.builtin").live_grep() end, {silent=true, desc="Telescope live grep"})

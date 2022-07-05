@@ -15,7 +15,6 @@ require("packer").startup(function(use)
   use "hrsh7th/cmp-nvim-lsp"
   use "saadparwaiz1/cmp_luasnip"
   use "L3MON4D3/LuaSnip"
-  use "preservim/nerdtree"
   use "tpope/vim-surround"
   use "tpope/vim-fugitive"
   use "tpope/vim-sleuth"
