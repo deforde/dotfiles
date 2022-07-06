@@ -61,7 +61,7 @@ local vcs = function()
   end
 
   return string.format(
-    ' %s %s %s %s', git_info.head, added, changed, removed
+    '  %s %s %s %s', git_info.head, added, changed, removed
   )
 end
 
@@ -69,7 +69,7 @@ status_line = {}
 
 status_line.active = function()
   return string.format(
-    " %s %%= %s %%= %%P %%l:%%c ",
+    " %s %%= %s %%P %%l:%%c ",
     vcs(),
     lsp()
   )
