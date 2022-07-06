@@ -89,12 +89,12 @@ require("packer").startup(function(use)
     end,
     run = ":TSUpdate"
   }
-  use {
-    "nvim-lualine/lualine.nvim",
-    config = function()
-      require "plugins.lualine"
-    end
-  }
+  -- use {
+  --   "nvim-lualine/lualine.nvim",
+  --   config = function()
+  --     require "plugins.lualine"
+  --   end
+  -- }
   use {
     "rcarriga/nvim-dap-ui",
     config = function()

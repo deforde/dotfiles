@@ -12,6 +12,7 @@ vim.opt.undofile = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.updatetime = 250
+vim.opt.winbar = "%f"
 vim.wo.signcolumn = "yes"
 vim.g.better_whitespace_enabled = 0
 vim.g.strip_whitespace_on_save = 1
@@ -28,7 +29,6 @@ vim.cmd[[colorscheme vscode]]
 vim.wo.colorcolumn = "80"
 -- vim.wo.foldmethod = "expr"
 -- vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
--- vim.opt.winbar = "%f"
 
 vim.cmd[[highlight Identifier guifg=#D4D4D4]]
 vim.cmd[[highlight TSParameter guifg=#D4D4D4]]
@@ -48,6 +48,14 @@ vim.api.nvim_create_autocmd("BufEnter", {
   command = "setf groovy",
   pattern = "Jenkinsfile*",
 })
+
+vim.api.nvim_exec([[
+  augroup status_line
+  au!
+  au WinEnter,BufEnter * setlocal statusline=%!v:lua.status_line.active()
+  au WinLeave,BufLeave * setlocal statusline=%!v:lua.status_line.inactive()
+  augroup END
+]], false)
 
 -- Highlight on yank
 local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
