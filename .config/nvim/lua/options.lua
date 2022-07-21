@@ -1,8 +1,8 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.softtabstop = 4
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.softtabstop = 2
 vim.opt.expandtab = true
 vim.opt.clipboard = "unnamedplus"
 vim.opt.termguicolors = true
@@ -14,9 +14,9 @@ vim.opt.smartcase = true
 vim.opt.updatetime = 250
 vim.opt.winbar = "%f"
 vim.wo.signcolumn = "yes"
-vim.g.better_whitespace_enabled = 0
-vim.g.strip_whitespace_on_save = 1
-vim.g.strip_whitespace_confirm = 0
+-- vim.g.better_whitespace_enabled = 0
+-- vim.g.strip_whitespace_on_save = 1
+-- vim.g.strip_whitespace_confirm = 0
 vim.opt.laststatus = 3
 -- vim.opt.cmdheight = 0
 vim.opt.list = true
@@ -47,6 +47,11 @@ vim.api.nvim_create_autocmd("TermOpen", {
 vim.api.nvim_create_autocmd("BufEnter", {
   command = "setf groovy",
   pattern = "Jenkinsfile*",
+})
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+  command = "%s/\\s\\+$//e",
+  pattern = "*",
 })
 
 vim.api.nvim_exec([[

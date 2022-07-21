@@ -11,7 +11,7 @@ require("packer").startup(function(use)
   use "wbthomason/packer.nvim"
   use "Mofiqul/vscode.nvim"
   -- use "eemed/sitruuna.vim"
-  use "ntpeters/vim-better-whitespace"
+  -- use "ntpeters/vim-better-whitespace"
   use "hrsh7th/cmp-nvim-lsp"
   use "saadparwaiz1/cmp_luasnip"
   use "L3MON4D3/LuaSnip"
