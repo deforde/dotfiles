@@ -3,7 +3,7 @@ export VISUAL="nvim"
 
 export TTS_UNITY_DIR="$HOME/dev/3rdparty/Unity/"
 
-export PATH=$HOME/dev/3rdparty/zig/zig-linux-x86_64-0.10.0-dev.2624+d506275a0:$HOME/dev/3rdparty/zk:$HOME/dev/3rdparty/ziglang/zls:$PATH
+export PATH=$HOME/dev/3rdparty/zig/zig-linux-x86_64-0.10.0-dev.2624+d506275a0:$HOME/dev/3rdparty/zk:$HOME/dev/3rdparty/ziglang/zls:/usr/local/go:$HOME/go/bin:$PATH
 
 export ZK_NOTEBOOK_DIR=$HOME/dev/deforde/notes
 
@@ -53,7 +53,6 @@ xcape -t 200 -e 'Caps_Lock=Escape'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 alias python='python3'
-alias ll='ls -la'
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias gn='/usr/bin/git --git-dir=$ZK_NOTEBOOK_DIR/.git/ --work-tree=$ZK_NOTEBOOK_DIR'
 
