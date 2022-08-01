@@ -67,6 +67,11 @@ set_keymap("n", "<space>xd", "<cmd>Trouble document_diagnostics<cr>", opts)
 set_keymap("n", "<space>xl", "<cmd>Trouble loclist<cr>", opts)
 set_keymap("n", "<space>xq", "<cmd>Trouble quickfix<cr>", opts)
 set_keymap("n", "gR", "<cmd>Trouble lsp_references<cr>", opts)
+-- Quickfix List
+set_keymap("n", "]q", "<cmd>cnext<cr>", opts)
+set_keymap("n", "]Q", "<cmd>clast<cr>", opts)
+set_keymap("n", "[q", "<cmd>cprev<cr>", opts)
+set_keymap("n", "[Q", "<cmd>cfirst<cr>", opts)
 -- zk
 set_keymap("n", "<space>zn", "<cmd>ZkNew { title = vim.fn.input('Title: ') }<cr>", opts)
 set_keymap("n", "<space>zt", "<cmd>:Telescope zk tags<cr>", opts)
