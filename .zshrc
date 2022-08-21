@@ -46,11 +46,6 @@ antigen apply
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#585858"
 
-setxkbmap -option ctrl:swapcaps
-# setxkbmap -option caps:ctrl_modifier -option grp:shifts_toggle
-# killall xcape &> /dev/null
-# xcape -t 200 -e 'Caps_Lock=Escape'
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 alias python='python3'
