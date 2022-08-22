@@ -1,15 +1,20 @@
 .PHONY: *
 
-all: general kitty nvim debugpy keyd fzf config
+all: general keyd fzf debugpy nvim kitty config
 
 general:
 	sudo apt install -y \
+	software-properties-common \
 	git \
 	xclip \
 	curl \
 	fd-find \
 	ripgrep \
 	ctags \
+	clang-tidy \
+	clang-format \
+	clangd \
+	bear \
 	rust-analyzer \
 	flake8 \
 	ncdu \
