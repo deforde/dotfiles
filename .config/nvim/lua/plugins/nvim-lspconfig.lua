@@ -7,6 +7,7 @@ require("lspconfig").clangd.setup {
         "--clang-tidy",
         "-j=8",
         "--compile-commands-dir=./build/",
+        "--enable-config",
     },
     capabilities = capabilities,
 }
