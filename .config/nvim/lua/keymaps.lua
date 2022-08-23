@@ -39,7 +39,7 @@ set_keymap("n", "<space>D", vim.lsp.buf.type_definition, {silent=true, desc="LSP
 set_keymap("n", "<space>rn", vim.lsp.buf.rename, {silent=true, desc="LSP rename"})
 set_keymap("n", "<space>ca", vim.lsp.buf.code_action, {silent=true, desc="LSP code action"})
 set_keymap("n", "gr", vim.lsp.buf.references, {silent=true, desc="LSP references"})
-set_keymap("n", "<space>f", vim.lsp.buf.formatting, {silent=true, desc="LSP formatting"})
+set_keymap("n", "<space>fm", vim.lsp.buf.format, {silent=true, desc="LSP formatting"})
 set_keymap("n", "gh", "<cmd>ClangdSwitchSourceHeader<CR>", opts)
 -- DAP
 set_keymap("n", "<F5>", function() return require("dap").continue() end, {silent=true, desc="Debugger launch/continue"})
