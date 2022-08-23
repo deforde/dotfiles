@@ -15,9 +15,7 @@ Diagnostics:
     Remove:
       - llvm-header-guard
       - google-readability-todo
-      - clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling
       - readability-magic-numbers
-      - clang-analyzer-optin.portability.UnixAPI
       - readability-uppercase-literal-suffix
       - modernize-use-trailing-return-type
       - llvmlibc-restrict-system-libc-headers
