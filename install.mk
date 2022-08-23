@@ -100,9 +100,7 @@ zk:
 	git clone git@github.com:deforde/notes.git && \
 	mkdir -p $$HOME/dev/3rdparty/zk && \
 	cd $$HOME/dev/3rdparty/zk && \
-	curl -LO https://github.com/mickael-menu/zk/releases/download/v0.10.1/zk-v0.10.1-linux-amd64.tar.gz && \
-	tar -xvf zk-v0.10.1-linux-amd64.tar.gz && \
-	rm zk-v0.10.1-linux-amd64.tar.gz
+	curl -L https://github.com/mickael-menu/zk/releases/download/v0.10.1/zk-v0.10.1-linux-amd64.tar.gz | tar -xz -C .
 
 config:
 	git clone --bare git@github.com:deforde/dotfiles.git .cfg && \
