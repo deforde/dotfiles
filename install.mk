@@ -24,11 +24,11 @@ general:
 
 kitty:
 	curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin && \
-	ln -s ~/.local/kitty.app/bin/kitty ~/.local/bin/ && \
-	cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applications/ && \
-	cp ~/.local/kitty.app/share/applications/kitty-open.desktop ~/.local/share/applications/ && \
-	sed -i "s|Icon=kitty|Icon=/home/$$USER/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" ~/.local/share/applications/kitty*.desktop && \
-	sed -i "s|Exec=kitty|Exec=/home/$$USER/.local/kitty.app/bin/kitty|g" ~/.local/share/applications/kitty*.desktop
+	ln -s $$HOME/.local/kitty.app/bin/kitty $$HOME/.local/bin/ && \
+	cp $$HOME/.local/kitty.app/share/applications/kitty.desktop $$HOME/.local/share/applications/ && \
+	cp $$HOME/.local/kitty.app/share/applications/kitty-open.desktop $$HOME/.local/share/applications/ && \
+	sed -i "s|Icon=kitty|Icon=/home/$$USER/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" $$HOME/.local/share/applications/kitty*.desktop && \
+	sed -i "s|Exec=kitty|Exec=/home/$$USER/.local/kitty.app/bin/kitty|g" $$HOME/.local/share/applications/kitty*.desktop
 
 nvim:
 	sudo add-apt-repository ppa:neovim-ppa/unstable && \
@@ -52,8 +52,8 @@ go:
 	go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.42.1 && \
 	go install golang.org/x/tools/gopls@latest
 
-# TODO: Add rust lang install: 'curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh'
 rust:
+	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y && \
 	mkdir -p $$HOME/dev/3rdparty/rust/rust-analyzer && \
 	cd $$HOME/dev/3rdparty/rust/rust-analyzer && \
 	curl -LO https://github.com/rust-lang/rust-analyzer/releases/download/2022-08-22/rust-analyzer-linux-x64.vsix && \
