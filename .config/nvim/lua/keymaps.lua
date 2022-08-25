@@ -4,6 +4,11 @@ local set_keymap = vim.keymap.set
 set_keymap({"n", "v"}, "<Space>", "<Nop>", opts)
 -- Term
 set_keymap("t", "<C-\\><C-\\>", "<C-\\><C-n>", opts)
+-- Buffers
+set_keymap("n", "]b", "<cmd>bnext<CR>", opts)
+set_keymap("n", "[b", "<cmd>bprev<CR>", opts)
+set_keymap("n", "]B", "<cmd>blast<CR>", opts)
+set_keymap("n", "[B", "<cmd>bfirst<CR>", opts)
 -- Windows
 set_keymap("n", "<C-h>", "<cmd>wincmd h<CR>", opts)
 set_keymap("n", "<C-j>", "<cmd>wincmd j<CR>", opts)
