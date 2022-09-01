@@ -59,8 +59,7 @@ require("packer").startup(function(use)
   use {
     "mfussenegger/nvim-dap-python",
     config = function()
-        require"dap-python".setup("~/.virtualenvs/debugpy/bin/python")
-        require"dap-python".test_runner = "pytest"
+        require "plugins.nvim-dap-python"
     end
   }
   use {
