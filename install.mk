@@ -68,7 +68,6 @@ python:
 	deactivate && \
 	npm install -g pyright
 
-# TODO: Need to update path to OpenDebugAD7 in nvim-dap.lua
 cppdbg:
 	mkdir -p $$HOME/dev/3rdparty/cppdbg/vscode-cpptools && \
 	cd $$HOME/dev/3rdparty/cppdbg/vscode-cpptools && \
