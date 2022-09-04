@@ -63,7 +63,7 @@ python:
 	mkdir -p $$HOME/.virtualenvs && \
 	cd $$HOME/.virtualenvs && \
 	python3 -m venv debugpy && \
-	source debugpy/bin/activate && \
+	. debugpy/bin/activate && \
 	python3 -m pip install debugpy pytest && \
 	deactivate && \
 	npm install -g pyright
