@@ -101,4 +101,6 @@ zk:
 
 config:
 	git clone --bare git@github.com:deforde/dotfiles.git .cfg && \
-	git --git-dir=$$HOME/.cfg/ --work-tree=$$HOME pull
+	git --git-dir=$$HOME/.cfg/ --work-tree=$$HOME pull && \
+	cd .cfg && \
+	git config --local status.showUntrackedFiles no
