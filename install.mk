@@ -21,7 +21,7 @@ general:
 	python3.10-venv \
 	npm \
 	zsh && \
-	chsh -s $$\(which zsh\)
+	chsh -s /usr/bin/zsh
 
 kitty:
 	curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin && \
@@ -67,7 +67,7 @@ python:
 	. debugpy/bin/activate && \
 	python3 -m pip install debugpy pytest && \
 	deactivate && \
-	npm install -g pyright
+	sudo npm install -g pyright
 
 cppdbg:
 	mkdir -p $$HOME/dev/3rdparty/cppdbg/vscode-cpptools && \
