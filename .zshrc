@@ -3,7 +3,7 @@ export VISUAL="nvim"
 
 export TTS_UNITY_DIR="$HOME/dev/3rdparty/Unity/"
 
-export PATH=$HOME/dev/3rdparty/ziglang/zig:$HOME/dev/3rdparty/zk:$HOME/dev/3rdparty/ziglang/zls:/usr/local/go:$HOME/go/bin:$PATH
+export PATH=$HOME/dev/3rdparty/ziglang/zig:$HOME/dev/3rdparty/zk:$HOME/dev/3rdparty/ziglang/zls:/usr/local/go/bin:$PATH
 
 export ZK_NOTEBOOK_DIR=$HOME/dev/deforde/notes
 
