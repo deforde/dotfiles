@@ -3,7 +3,7 @@ local dap = require("dap")
 dap.adapters.cppdbg = {
   id = "cppdbg",
   type = "executable",
-  command = "/home/danielforde/dev/3rdparty/cppdbg/vscode-cpptools/extension/debugAdapters/bin/OpenDebugAD7",
+  command = vim.env.HOME .. "/dev/3rdparty/cppdbg/vscode-cpptools/extension/debugAdapters/bin/OpenDebugAD7",
 }
 dap.configurations.c = {
   {
