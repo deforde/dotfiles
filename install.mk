@@ -19,6 +19,7 @@ general:
 	ncdu \
 	python3-pip \
 	python3.10-venv \
+	npm \
 	zsh && \
 	chsh -s $$\(which zsh\)
 
