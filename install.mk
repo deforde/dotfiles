@@ -62,9 +62,9 @@ rust:
 python:
 	mkdir -p $$HOME/.virtualenvs && \
 	cd $$HOME/.virtualenvs && \
-	python -m venv debugpy && \
+	python3 -m venv debugpy && \
 	source debugpy/bin/activate && \
-	python -m pip install debugpy pytest && \
+	python3 -m pip install debugpy pytest && \
 	deactivate && \
 	npm install -g pyright
 
