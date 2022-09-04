@@ -1,6 +1,6 @@
 .PHONY: *
 
-all: general keyd fzf zig go rust python cppdbg zk nvim kitty config
+all: general keyd fzf zig go rust python cppdbg zk fonts nvim kitty config
 
 general:
 	sudo apt install -y \
@@ -105,3 +105,10 @@ config:
 	git --git-dir=$$HOME/.cfg/ --work-tree=$$HOME pull && \
 	cd .cfg && \
 	git config --local status.showUntrackedFiles no
+
+fonts:
+	mkdir -p $$HOME/.local/share/fonts && \
+	cd $$HOME/.local/share/fonts && \
+	curl -LO https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.1/UbuntuMono.zip && \
+	unzip UbuntuMono.zip && \
+	rm UbuntuMono.zip
