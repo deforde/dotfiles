@@ -20,7 +20,7 @@ general:
 	python3-pip \
 	python3.10-venv \
 	zsh && \
-	chsh -s \($$which zsh\)
+	chsh -s $$\(which zsh\)
 
 kitty:
 	curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin && \
@@ -80,6 +80,7 @@ keyd:
 	mkdir -p $$HOME/temp && \
 	cd $$HOME/temp && \
 	git clone git@github.com:rvaiya/keyd.git && \
+	cd keyd && \
 	make && \
 	sudo make install && \
 	sudo systemctl enable keyd && \
