@@ -10,7 +10,7 @@ general:
 	curl \
 	fd-find \
 	ripgrep \
-	ctags \
+	exuberant-ctags \
 	clang-tidy \
 	clang-format \
 	clangd \
@@ -20,7 +20,7 @@ general:
 	python3-pip \
 	python3.10-venv \
 	zsh && \
-	chsh -s ($$which zsh)
+	chsh -s \($$which zsh\)
 
 kitty:
 	curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin && \
