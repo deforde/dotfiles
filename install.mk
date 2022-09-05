@@ -35,6 +35,10 @@ nvim:
 	sudo add-apt-repository ppa:neovim-ppa/unstable && \
 	sudo apt install neovim
 
+update:
+	sudo apt install -y neovim && nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync' && \
+	curl -L git.io/antigen > $$HOME/.config/zsh/antigen.zsh
+
 zig:
 	mkdir -p $$HOME/dev/3rdparty/ziglang/zig && \
 	curl -L https://ziglang.org/builds/zig-linux-x86_64-0.10.0-dev.3672+cd5a9ba1f.tar.xz | \
