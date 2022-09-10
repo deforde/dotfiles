@@ -33,7 +33,7 @@ kitty:
 
 nvim:
 	mkdir -p $$HOME/dev/3rdparty && \
-	cd -p $$HOME/dev/3rdparty && \
+	cd $$HOME/dev/3rdparty && \
 	git clone https://github.com/neovim/neovim && \
 	cd neovim && \
 	rm -rf build install && \
@@ -45,7 +45,7 @@ nvim:
 	sudo ln install/bin/nvim /usr/local/bin/nvim
 
 update_nvim:
-	cd -p $$HOME/dev/3rdparty/neovim && \
+	cd $$HOME/dev/3rdparty/neovim && \
 	rm -rf build install && \
 	git checkout master && \
 	git pull && \
