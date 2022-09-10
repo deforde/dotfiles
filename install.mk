@@ -42,7 +42,7 @@ nvim:
 	git checkout nightly && \
 	make CMAKE_BUILD_TYPE=RelWithDebInfo CMAKE_INSTALL_PREFIX=$$PWD/install && \
 	make install && \
-	sudo ln install/bin/nvim /usr/local/bin/nvim
+	sudo ln -f install/bin/nvim /usr/local/bin/nvim
 
 update_nvim:
 	cd $$HOME/dev/3rdparty/neovim && \
@@ -52,9 +52,9 @@ update_nvim:
 	git checkout nightly && \
 	make CMAKE_BUILD_TYPE=RelWithDebInfo CMAKE_INSTALL_PREFIX=$$PWD/install && \
 	make install && \
-	sudo ln -f install/bin/nvim /usr/local/bin/nvim && \
 	date >> $$HOME/.config/nvim/build_log.txt && \
 	git describe --long >> $$HOME/.config/nvim/build_log.txt && \
+	echo >> $$HOME/.config/nvim/build_log.txt && \
 	git --git-dir=$$HOME/.cfg/ --work-tree=$$HOME add $$HOME/.config/nvim/build_log.txt && \
 	git --git-dir=$$HOME/.cfg/ --work-tree=$$HOME switch main && \
 	git --git-dir=$$HOME/.cfg/ --work-tree=$$HOME commit -m "update nvim build_log.txt" && \
@@ -62,7 +62,6 @@ update_nvim:
 	git --git-dir=$$HOME/.cfg/ --work-tree=$$HOME switch lifeq && \
 	git --git-dir=$$HOME/.cfg/ --work-tree=$$HOME rebase main && \
 	git --git-dir=$$HOME/.cfg/ --work-tree=$$HOME push -f && \
-	echo >> $$HOME/.config/nvim/build_log.txt && \
 	nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 
 update_antigen:
