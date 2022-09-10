@@ -52,7 +52,7 @@ update_nvim:
 	git checkout nightly && \
 	make CMAKE_BUILD_TYPE=RelWithDebInfo CMAKE_INSTALL_PREFIX=$$PWD/install && \
 	make install && \
-	sudo ln install/bin/nvim /usr/local/bin/nvim
+	sudo ln -f install/bin/nvim /usr/local/bin/nvim
 	date >> $$HOME/.config/nvim/build_log.txt && \
 	git describe --long >> $$HOME/.config/nvim/build_log.txt && \
 	echo >> $$HOME/.config/nvim/build_log.txt && \
