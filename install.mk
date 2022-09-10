@@ -1,6 +1,6 @@
 .PHONY: *
 
-all: general keyd fzf zig go rust python cppdbg zk fonts nvim kitty config
+all: general keyd fzf zig go rust python cppdbg zk fonts nvim kitty config update_nvim update_antigen
 
 general:
 	sudo apt install -y \
@@ -32,11 +32,37 @@ kitty:
 	sed -i "s|Exec=kitty|Exec=/home/$$USER/.local/kitty.app/bin/kitty|g" $$HOME/.local/share/applications/kitty*.desktop
 
 nvim:
-	sudo add-apt-repository ppa:neovim-ppa/unstable && \
-	sudo apt install neovim
+	mkdir -p $$HOME/dev/3rdparty && \
+	cd -p $$HOME/dev/3rdparty && \
+	git clone https://github.com/neovim/neovim && \
+	cd neovim && \
+	rm -rf build install && \
+	git checkout master && \
+	git pull && \
+	git checkout nightly && \
+	make CMAKE_BUILD_TYPE=RelWithDebInfo CMAKE_INSTALL_PREFIX=$$PWD/install && \
+	make install && \
+	sudo ln install/bin/nvim /usr/local/bin/nvim
 
-update:
-	sudo apt install -y neovim && nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync' && \
+update_nvim:
+	cd -p $$HOME/dev/3rdparty/neovim && \
+	rm -rf build install && \
+	git checkout master && \
+	git pull && \
+	git checkout nightly && \
+	make CMAKE_BUILD_TYPE=RelWithDebInfo CMAKE_INSTALL_PREFIX=$$PWD/install && \
+	make install && \
+	sudo ln install/bin/nvim /usr/local/bin/nvim
+	date >> $$HOME/.config/nvim/build_log.txt && \
+	git describe --long >> $$HOME/.config/nvim/build_log.txt && \
+	echo >> $$HOME/.config/nvim/build_log.txt && \
+	config add $$HOME/.config/nvim/build_log.txt && \
+	config switch main && \
+	config commit -m "update nvim build_log.txt" && \
+	config push && config switch lifeq && config rebase main && config push -f && \
+	nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+
+update_antigen:
 	curl -L git.io/antigen > $$HOME/.config/zsh/antigen.zsh
 
 zig:
