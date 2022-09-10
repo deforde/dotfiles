@@ -20,6 +20,7 @@ vim.opt.laststatus = 3
 vim.opt.list = true
 vim.opt.listchars:append({ trail = "⋅", tab = "> " })
 vim.opt.number = true
+vim.opt.relativenumber = true
 vim.g.vscode_style = "dark"
 vim.g.vscode_disable_nvimtree_bg = true
 vim.cmd[[colorscheme vscode]]

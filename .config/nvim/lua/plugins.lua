@@ -106,12 +106,12 @@ require("packer").startup(function(use)
   use "tpope/vim-fugitive"
   use "tpope/vim-sleuth"
   use "ludovicchabant/vim-gutentags"
-  use {
-    "ggandor/leap.nvim",
-    config = function()
-        require("leap").set_default_keymaps()
-    end
-  }
+  -- use {
+  --   "ggandor/leap.nvim",
+  --   config = function()
+  --       require("leap").set_default_keymaps()
+  --   end
+  -- }
   use {
     "numToStr/Comment.nvim",
     config = function()
