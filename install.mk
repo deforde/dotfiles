@@ -65,7 +65,14 @@ update_nvim:
 	nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 
 update_antigen:
-	curl -L git.io/antigen > $$HOME/.config/zsh/antigen.zsh
+	curl -L git.io/antigen > $$HOME/.config/zsh/antigen.zsh && \
+	git --git-dir=$$HOME/.cfg/ --work-tree=$$HOME add $$HOME/.config/zsh/antigen.zsh && \
+	git --git-dir=$$HOME/.cfg/ --work-tree=$$HOME switch main && \
+	git --git-dir=$$HOME/.cfg/ --work-tree=$$HOME commit -m "update antigen.zsh" && \
+	git --git-dir=$$HOME/.cfg/ --work-tree=$$HOME push && \
+	git --git-dir=$$HOME/.cfg/ --work-tree=$$HOME switch lifeq && \
+	git --git-dir=$$HOME/.cfg/ --work-tree=$$HOME rebase main && \
+	git --git-dir=$$HOME/.cfg/ --work-tree=$$HOME push -f
 
 zig:
 	mkdir -p $$HOME/dev/3rdparty/ziglang/zig && \
