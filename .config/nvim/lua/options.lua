@@ -15,14 +15,14 @@ vim.opt.updatetime = 250
 vim.opt.winbar = "%f"
 vim.wo.signcolumn = "yes"
 vim.opt.laststatus = 3
--- vim.opt.cmdheight = 0
+-- vim.opt.spelllang = "en,cjk"
+-- vim.opt_local.spelloptions:append("noplainbuffer")
 vim.opt.list = true
 vim.opt.listchars:append({ trail = "⋅", tab = "> " })
 vim.opt.number = true
 vim.g.vscode_style = "dark"
 vim.g.vscode_disable_nvimtree_bg = true
 vim.cmd[[colorscheme vscode]]
--- vim.cmd[[colorscheme sitruuna]]
 vim.wo.colorcolumn = "80"
 -- vim.wo.foldmethod = "expr"
 -- vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
