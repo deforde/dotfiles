@@ -39,6 +39,7 @@ nvim:
 	rm -rf build install && \
 	git checkout master && \
 	git pull && \
+	git fetch -t -f && \
 	git checkout nightly && \
 	make CMAKE_BUILD_TYPE=RelWithDebInfo CMAKE_INSTALL_PREFIX=$$PWD/install && \
 	make install && \
@@ -49,6 +50,7 @@ update_nvim:
 	rm -rf build install && \
 	git checkout master && \
 	git pull && \
+	git fetch -t -f && \
 	git checkout nightly && \
 	make CMAKE_BUILD_TYPE=RelWithDebInfo CMAKE_INSTALL_PREFIX=$$PWD/install && \
 	make install && \
