@@ -15,7 +15,7 @@ vim.opt.updatetime = 250
 vim.opt.winbar = "%f"
 vim.wo.signcolumn = "yes"
 vim.opt.laststatus = 3
--- vim.opt.spelllang = "en,cjk"
+-- vim.opt.spelllang = "en_gb"
 -- vim.opt_local.spelloptions:append("noplainbuffer")
 vim.opt.list = true
 vim.opt.listchars:append({ trail = "⋅", tab = "> " })
