@@ -7,7 +7,7 @@ require("lspconfig").clangd.setup {
         "--clang-tidy",
         "-j=8",
         "--compile-commands-dir=./build/",
-        "--fallback-style=\"{BasedOnStyle: llvm}\"",
+        "--fallback-style=llvm",
         "--enable-config",
     },
     capabilities = capabilities,
