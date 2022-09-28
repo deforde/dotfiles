@@ -19,3 +19,5 @@
 	path = ~/dev/deforde/.gitconfig
 [includeIf "gitdir:~/dev/3rdparty/"]
 	path = ~/dev/3rdparty/.gitconfig
+[diff]
+	tool = nvimdiff
