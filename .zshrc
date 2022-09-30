@@ -34,8 +34,6 @@ setopt share_history
 
 typeset -U path
 
-bindkey -v
-
 source "$HOME/.config/zsh/antigen.zsh"
 antigen use oh-my-zsh
 antigen bundle git
@@ -52,3 +50,4 @@ alias python='python3'
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias gn='/usr/bin/git --git-dir=$ZK_NOTEBOOK_DIR/.git/ --work-tree=$ZK_NOTEBOOK_DIR'
 
+bindkey -v
