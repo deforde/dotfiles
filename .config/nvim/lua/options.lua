@@ -29,13 +29,13 @@ vim.wo.colorcolumn = "80"
 -- vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
 
 vim.cmd[[highlight Identifier guifg=#D4D4D4]]
-vim.cmd[[highlight TSParameter guifg=#D4D4D4]]
-vim.cmd[[highlight TSParameterReference guifg=#D4D4D4]]
-vim.cmd[[highlight TSField guifg=#D4D4D4]]
-vim.cmd[[highlight TSProperty guifg=#D4D4D4]]
-vim.cmd[[highlight TSLabel guifg=#D4D4D4]]
-vim.cmd[[highlight TSVariable guifg=#D4D4D4]]
-vim.cmd[[highlight TSVariableBuiltin guifg=#D4D4D4]]
+vim.cmd[[highlight @parameter guifg=#D4D4D4]]
+vim.cmd[[highlight @parameterReference guifg=#D4D4D4]]
+vim.cmd[[highlight @field guifg=#D4D4D4]]
+vim.cmd[[highlight @property guifg=#D4D4D4]]
+vim.cmd[[highlight @label guifg=#D4D4D4]]
+vim.cmd[[highlight @variable guifg=#D4D4D4]]
+vim.cmd[[highlight @variableBuiltin guifg=#D4D4D4]]
 
 vim.api.nvim_create_autocmd("TermOpen", {
   command = "startinsert",
