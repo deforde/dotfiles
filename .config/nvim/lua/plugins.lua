@@ -83,6 +83,7 @@ require("packer").startup(function(use)
     run = ":TSUpdate"
   }
   use "nvim-treesitter/nvim-treesitter-textobjects"
+  use "nvim-treesitter/playground"
   -- telescope
   use {
     "nvim-telescope/telescope.nvim",
