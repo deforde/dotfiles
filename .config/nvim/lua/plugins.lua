@@ -145,7 +145,7 @@ require("packer").startup(function(use)
     end
   }
   -- cosmetic
-  use { "deforde/vscode.nvim", branch = "bugfix/issue-90" }
+  use "Mofiqul/vscode.nvim"
   end
 )
 
