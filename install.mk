@@ -5,22 +5,24 @@ all: general keyd fzf zig go rust python cppdbg zk fonts nvim kitty config updat
 
 general:
 	sudo apt install -y \
-	software-properties-common \
-	git \
-	xclip \
-	curl \
-	fd-find \
-	ripgrep \
-	exuberant-ctags \
-	clang-tidy \
-	clang-format \
-	clangd \
 	bear \
+	clang-format \
+	clang-tidy \
+	clangd \
+	curl \
+	dmenu \
+	exuberant-ctags \
+	fd-find \
 	flake8 \
+	git \
+	i3-wm \
 	ncdu \
+	npm \
 	python3-pip \
 	python3.10-venv \
-	npm \
+	ripgrep \
+	software-properties-common \
+	xclip \
 	zsh
 	chsh -s /usr/bin/zsh
 
