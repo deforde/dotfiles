@@ -13,11 +13,13 @@ general:
 	dmenu \
 	exuberant-ctags \
 	fd-find \
+	feh \
 	flake8 \
 	git \
 	i3-wm \
 	ncdu \
 	npm \
+	polybar \
 	python3-pip \
 	python3.10-venv \
 	ripgrep \
