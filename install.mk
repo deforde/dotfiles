@@ -16,6 +16,7 @@ general:
 	git \
 	ncdu \
 	npm \
+	patchelf \
 	python3-pip \
 	python3.10-venv \
 	ripgrep \
