@@ -19,6 +19,7 @@ general:
 	python3-pip \
 	python3.10-venv \
 	ripgrep \
+	shellcheck \
 	software-properties-common \
 	xclip \
 	zsh
