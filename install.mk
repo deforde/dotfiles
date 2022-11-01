@@ -1,7 +1,7 @@
 .ONESHELL:
 .PHONY: *
 
-all: general keyd fzf zig go rust python cppdbg zk fonts nvim kitty config update_nvim update_antigen
+all: general keyd fzf zig go rust python cppdbg zk fonts nvim kitty config update_nvim update_antigen nix
 
 general:
 	sudo apt install -y \
@@ -156,3 +156,6 @@ fonts:
 	curl -LO https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.1/UbuntuMono.zip
 	unzip UbuntuMono.zip
 	rm UbuntuMono.zip
+
+nix:
+	sh <(curl -L https://nixos.org/nix/install) --daemon
