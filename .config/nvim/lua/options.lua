@@ -25,8 +25,9 @@ vim.g.vscode_style = "dark"
 vim.g.vscode_disable_nvimtree_bg = true
 vim.cmd[[colorscheme vscode]]
 vim.wo.colorcolumn = "80"
--- vim.wo.foldmethod = "expr"
--- vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
+vim.wo.foldmethod = "expr"
+vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldlevel = 99
 
 vim.cmd[[highlight Identifier guifg=#D4D4D4]]
 vim.cmd[[highlight @parameter guifg=#D4D4D4]]
