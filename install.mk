@@ -159,3 +159,11 @@ fonts:
 
 nix:
 	sh <(curl -L https://nixos.org/nix/install) --daemon
+
+kotlin:
+	sudo apt install -y gradle
+	mkdir -p $$HOME/dev/3rdparty/kotlin-language-server
+	cd $$HOME/dev/3rdparty/kotlin-language-server
+	curl -LO https://github.com/fwcd/kotlin-language-server/releases/download/1.3.1/server.zip
+	unzip server.zip
+	rm server.zip
