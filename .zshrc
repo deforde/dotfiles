@@ -37,16 +37,24 @@ typeset -U path
 
 source "$HOME/.config/zsh/antigen.zsh"
 antigen use oh-my-zsh
-antigen bundle git
+# antigen bundle git
 antigen bundle zsh-users/zsh-autosuggestions
 # antigen theme robbyrussell
-antigen theme spaceship-prompt/spaceship-prompt
+# antigen theme spaceship-prompt/spaceship-prompt
 antigen apply
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#585858"
 
-SPACESHIP_VI_MODE_SHOW=false
-SPACESHIP_PROMPT_ADD_NEWLINE=false
+# SPACESHIP_VI_MODE_SHOW=false
+# SPACESHIP_PROMPT_ADD_NEWLINE=false
+# SPACESHIP_PROMPT_PREFIXES_SHOW=false
+
+# SPACESHIP_PROMPT_SEPARATE_LINE=false
+# SPACESHIP_CHAR_PREFIX=" "
+# SPACESHIP_CHAR_SUFFIX=" "
+# SPACESHIP_CHAR_SYMBOL=";"
+
+export PROMPT='%(?.%F{blue};.%F{red};)%f '
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
