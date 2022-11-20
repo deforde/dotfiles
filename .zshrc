@@ -45,6 +45,9 @@ antigen apply
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#585858"
 
+SPACESHIP_VI_MODE_SHOW=false
+SPACESHIP_PROMPT_ADD_NEWLINE=false
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 alias python='python3'
