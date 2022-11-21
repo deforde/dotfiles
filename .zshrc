@@ -3,8 +3,7 @@ export VISUAL="nvim"
 
 export TTS_UNITY_DIR="$HOME/dev/3rdparty/Unity/"
 
-export PATH=$HOME/dev/3rdparty/ziglang/zig:$HOME/dev/3rdparty/zk:$HOME/dev/3rdparty/ziglang/zls:/usr/local/go/bin:$PATH
-# $HOME/dev/3rdparty/kotlin-language-server/server/bin
+export PATH=$HOME/dev/3rdparty/ziglang/zig:$HOME/dev/3rdparty/zk:$HOME/dev/3rdparty/ziglang/zls:/usr/local/go/bin:$HOME/dev/3rdparty/kotlin-language-server/server/bin:$PATH
 
 export ZK_NOTEBOOK_DIR=$HOME/dev/deforde/notes
 
