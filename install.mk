@@ -1,7 +1,7 @@
 .ONESHELL:
 .PHONY: *
 
-all: general keyd fzf zig go rust python cppdbg zk fonts nvim kitty config update_nvim update_antigen nix
+all: general keyd fzf zig zls go rust python cppdbg zk fonts nvim kitty config update_nvim update_antigen nix
 
 general:
 	sudo apt install -y \
@@ -81,11 +81,14 @@ update_antigen:
 
 zig:
 	mkdir -p $$HOME/dev/3rdparty/ziglang/zig
-	curl -L https://ziglang.org/builds/zig-linux-x86_64-0.10.0-dev.3672+cd5a9ba1f.tar.xz | \
+	curl -L https://ziglang.org/builds/zig-linux-x86_64-0.11.0-dev.324+f61c5f3f5.tar.xz | \
 	tar -xJ --strip-components=1 -C $$HOME/dev/3rdparty/ziglang/zig
+
+zls:
+	rm -rf $$HOME/dev/3rdparty/ziglang/zls
 	mkdir -p $$HOME/dev/3rdparty/ziglang/zls
-	curl -L https://github.com/zigtools/zls/releases/download/0.9.0/x86_64-linux.tar.xz | \
-	tar -xJ --strip-components=1 -C $$HOME/dev/3rdparty/ziglang/zls
+	curl -L https://github.com/zigtools/zls/releases/download/0.10.0/x86_64-linux.tar.zst | \
+	tar --use-compress-program=unzstd -x --strip-components=1 -C $$HOME/dev/3rdparty/ziglang/zls
 	chmod +x $$HOME/dev/3rdparty/ziglang/zls/zls
 
 go:
