@@ -11,8 +11,8 @@ export DOCKER_BUILDKIT=1
 
 export ZDOTDIR="$HOME"
 export HISTFILE="$ZDOTDIR/.zsh_history"
-export HISTSIZE=10000
-export SAVEHIST=10000
+export HISTSIZE=200000
+export SAVEHIST=200000
 
 autoload -U compinit && compinit
 setopt complete_in_word
