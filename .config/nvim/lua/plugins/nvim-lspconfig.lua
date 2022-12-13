@@ -3,6 +3,14 @@ capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
 local util = require "lspconfig.util"
 
+local servers = { "clangd", "pyright", "rust_analyzer", "zls", "golangci_lint_ls", "gopls", "kotlin_language_server" };
+
+require("mason").setup()
+
+require("mason-lspconfig").setup {
+    ensure_installed = servers,
+}
+
 require("lspconfig").clangd.setup {
     cmd = {
         "clangd",

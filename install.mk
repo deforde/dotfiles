@@ -84,28 +84,12 @@ zig:
 	curl -L https://ziglang.org/builds/zig-linux-x86_64-0.11.0-dev.324+f61c5f3f5.tar.xz | \
 	tar -xJ --strip-components=1 -C $$HOME/dev/3rdparty/ziglang/zig
 
-zls:
-	rm -rf $$HOME/dev/3rdparty/ziglang/zls
-	mkdir -p $$HOME/dev/3rdparty/ziglang/zls
-	curl -L https://github.com/zigtools/zls/releases/download/0.10.0/x86_64-linux.tar.zst | \
-	tar --use-compress-program=unzstd -x --strip-components=1 -C $$HOME/dev/3rdparty/ziglang/zls
-	chmod +x $$HOME/dev/3rdparty/ziglang/zls/zls
-
 go:
 	curl -L https://go.dev/dl/go1.19.linux-amd64.tar.gz | \
 	sudo tar -xz -C /usr/local
-	go install github.com/nametake/golangci-lint-langserver@latest
-	go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.42.1
-	go install golang.org/x/tools/gopls@latest
 
 rust:
 	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-	mkdir -p $$HOME/dev/3rdparty/rust/rust-analyzer
-	cd $$HOME/dev/3rdparty/rust/rust-analyzer
-	curl -LO https://github.com/rust-lang/rust-analyzer/releases/download/2022-08-22/rust-analyzer-linux-x64.vsix
-	unzip rust-analyzer-linux-x64.vsix
-	rm rust-analyzer-linux-x64.vsix
-	sudo ln $$HOME/dev/3rdparty/rust/rust-analyzer/extension/server/rust-analyzer /usr/bin/rust-analyzer
 
 python:
 	mkdir -p $$HOME/.virtualenvs
@@ -165,8 +149,3 @@ nix:
 
 kotlin:
 	sudo apt install -y gradle
-	mkdir -p $$HOME/dev/3rdparty/kotlin-language-server
-	cd $$HOME/dev/3rdparty/kotlin-language-server
-	curl -LO https://github.com/fwcd/kotlin-language-server/releases/download/1.3.1/server.zip
-	unzip server.zip
-	rm server.zip

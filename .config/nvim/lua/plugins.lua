@@ -13,6 +13,10 @@ require("packer").startup(function(use)
   -- lsp
   use {
     "neovim/nvim-lspconfig",
+    requires = {
+      "williamboman/mason.nvim",
+      "williamboman/mason-lspconfig.nvim",
+    },
     config = function()
         require "plugins.nvim-lspconfig"
     end
