@@ -111,6 +111,7 @@ require("packer").startup(function(use)
   use "tpope/vim-fugitive"
   use "tpope/vim-sleuth"
   use "ludovicchabant/vim-gutentags"
+  use "mbbill/undotree"
   use {
     "ggandor/leap.nvim",
     config = function()

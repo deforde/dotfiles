@@ -82,4 +82,5 @@ set_keymap("n", "[Q", "<cmd>cfirst<cr>", opts)
 set_keymap("n", "<space>zn", "<cmd>ZkNew { title = vim.fn.input('Title: ') }<cr>", opts)
 set_keymap("n", "<space>zt", "<cmd>:Telescope zk tags<cr>", opts)
 set_keymap("n", "<space>zf", "<cmd>:Telescope zk notes<cr>", opts)
-
+-- undo tree
+set_keymap("n", "<space>u", "<cmd>UndotreeToggle<cr>", opts)
