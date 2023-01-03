@@ -1,30 +1,50 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
+
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.softtabstop = 2
 vim.opt.expandtab = true
-vim.opt.clipboard = "unnamedplus"
+
+vim.opt.wrap = false
+
+-- vim.opt.clipboard = "unnamedplus"
+
 vim.opt.termguicolors = true
+
 vim.opt.hlsearch = false
+vim.opt.incsearch = true
+
 vim.opt.breakindent = true
-vim.opt.undofile = true
+
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
-vim.opt.updatetime = 250
+
+vim.opt.updatetime = 50
+
 vim.opt.winbar = "%f"
-vim.wo.signcolumn = "yes"
+
+vim.opt.scrolloff = 8
+vim.opt.signcolumn = "yes"
+vim.opt.colorcolumn = "80"
+
 vim.opt.laststatus = 3
+
+vim.opt.undofile = true
+
 -- vim.opt.spell = true
 vim.opt.spelllang = "en_gb"
 vim.opt_local.spelloptions:append({"noplainbuffer", "camel"})
+
 vim.opt.list = true
 vim.opt.listchars:append({ trail = "⋅", tab = "> " })
+
 vim.opt.number = true
+
 vim.g.vscode_style = "dark"
 vim.g.vscode_disable_nvimtree_bg = true
 vim.cmd[[colorscheme vscode]]
-vim.wo.colorcolumn = "80"
+
 vim.wo.foldmethod = "expr"
 vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldlevel = 99
