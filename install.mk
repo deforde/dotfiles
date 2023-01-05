@@ -22,7 +22,6 @@ general:
 	ripgrep \
 	shellcheck \
 	software-properties-common \
-	xclip \
 	zsh
 	chsh -s /usr/bin/zsh
 
