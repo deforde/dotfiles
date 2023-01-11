@@ -21,6 +21,8 @@ Diagnostics:
       - readability-implicit-bool-conversion
       - modernize-use-trailing-return-type
       - modernize-use-auto
+      - modernize-use-using
+      - modernize-deprecated-headers
       - llvmlibc-restrict-system-libc-headers
       - llvmlibc-callee-namespace
       - llvmlibc-implementation-in-namespace
