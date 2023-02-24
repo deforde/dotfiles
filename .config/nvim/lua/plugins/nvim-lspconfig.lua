@@ -3,7 +3,7 @@ capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
 local util = require "lspconfig.util"
 
-local servers = { "clangd", "pyright", "rust_analyzer", "zls", "golangci_lint_ls", "gopls", "kotlin_language_server" };
+local servers = { "clangd", "pyright", "rust_analyzer", "zls", "golangci_lint_ls", "gopls", "kotlin_language_server", "lua_ls" };
 
 local set_keymap = vim.keymap.set
 local on_attach = function(client, bufnr)
@@ -67,6 +67,11 @@ require("lspconfig").golangci_lint_ls.setup {
 }
 
 require("lspconfig").gopls.setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
+}
+
+require("lspconfig").lua_ls.setup {
     capabilities = capabilities,
     on_attach = on_attach,
 }
