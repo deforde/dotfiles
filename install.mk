@@ -66,6 +66,7 @@ update_nvim:
 	git --git-dir=$$HOME/.cfg/ --work-tree=$$HOME switch lifeq
 	git --git-dir=$$HOME/.cfg/ --work-tree=$$HOME rebase main
 	git --git-dir=$$HOME/.cfg/ --work-tree=$$HOME push -f
+	sudo ln -f install/bin/nvim /usr/local/bin/nvim
 	nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 
 update_antigen:
