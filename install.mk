@@ -1,7 +1,7 @@
 .ONESHELL:
 .PHONY: *
 
-all: general keyd fzf zig zls go rust python cppdbg zk fonts nvim kitty config update_nvim update_antigen nix
+all: general keyd fzf zig zls go rust python cppdbg zk fonts nvim kitty config update_nvim update_antigen nix luajit
 
 general:
 	sudo apt install -y \
@@ -149,3 +149,10 @@ nix:
 
 kotlin:
 	sudo apt install -y gradle
+
+luajit:
+	mkdir -p $$HOME/dev/3rdpart/luajit
+	curl -L https://luajit.org/download/LuaJIT-2.0.5.tar.gz | \
+	tar -xz -C $$HOME/dev/3rdpart/luajit
+	make -C $$HOME/dev/3rdpart/luajit/LuaJIT-2.0.5 && \
+	sudo make -C $$HOME/dev/3rdpart/luajit/LuaJIT-2.0.5 install
