@@ -144,10 +144,7 @@ require("packer").startup(function(use)
     end
   }
   -- cosmetic
-  use {
-    "deforde/vscode.nvim",
-    branch = "bugfix/E5113-expected-table-got-nil"
-  }
+  use "mofiqul/vscode.nvim"
   end
 )
 
