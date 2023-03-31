@@ -57,6 +57,7 @@ vim.cmd[[highlight @property guifg=#D4D4D4]]
 vim.cmd[[highlight @label guifg=#D4D4D4]]
 vim.cmd[[highlight @variable guifg=#D4D4D4]]
 vim.cmd[[highlight @variableBuiltin guifg=#D4D4D4]]
+vim.cmd[[highlight @punctuation.bracket guifg=#D4D4D4]]
 
 vim.api.nvim_create_autocmd("TermOpen", {
   command = "startinsert",
