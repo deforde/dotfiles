@@ -81,7 +81,7 @@ update_antigen:
 
 zig:
 	mkdir -p $$HOME/dev/3rdparty/ziglang/zig
-	curl -L https://ziglang.org/builds/zig-linux-x86_64-0.11.0-dev.324+f61c5f3f5.tar.xz | \
+	curl -L https://ziglang.org/builds/zig-linux-x86_64-0.11.0-dev.2375+771d07268.tar.xz | \
 	tar -xJ --strip-components=1 -C $$HOME/dev/3rdparty/ziglang/zig
 
 go:
