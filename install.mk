@@ -1,7 +1,7 @@
 .ONESHELL:
 .PHONY: *
 
-all: general keyd fzf zig zls go rust python cppdbg zk fonts nvim kitty config update_nvim update_antigen nix luajit
+all: general keyd fzf zig go rust python cppdbg zk fonts nvim kitty config update_nvim update_antigen nix luajit
 
 general:
 	sudo apt install -y \
@@ -9,10 +9,12 @@ general:
 	clang-format \
 	clang-tidy \
 	clangd \
+	cmake \
 	curl \
 	exuberant-ctags \
 	fd-find \
 	flake8 \
+	gettext \
 	git \
 	ncdu \
 	npm \
@@ -63,9 +65,6 @@ update_nvim:
 	git --git-dir=$$HOME/.cfg/ --work-tree=$$HOME switch main
 	git --git-dir=$$HOME/.cfg/ --work-tree=$$HOME commit -m "update nvim build_log.txt"
 	git --git-dir=$$HOME/.cfg/ --work-tree=$$HOME push
-	git --git-dir=$$HOME/.cfg/ --work-tree=$$HOME switch lifeq
-	git --git-dir=$$HOME/.cfg/ --work-tree=$$HOME rebase main
-	git --git-dir=$$HOME/.cfg/ --work-tree=$$HOME push -f
 	sudo ln -f install/bin/nvim /usr/local/bin/nvim
 	nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 
@@ -75,9 +74,6 @@ update_antigen:
 	git --git-dir=$$HOME/.cfg/ --work-tree=$$HOME switch main
 	git --git-dir=$$HOME/.cfg/ --work-tree=$$HOME commit -m "update antigen.zsh"
 	git --git-dir=$$HOME/.cfg/ --work-tree=$$HOME push
-	git --git-dir=$$HOME/.cfg/ --work-tree=$$HOME switch lifeq
-	git --git-dir=$$HOME/.cfg/ --work-tree=$$HOME rebase main
-	git --git-dir=$$HOME/.cfg/ --work-tree=$$HOME push -f
 
 zig:
 	mkdir -p $$HOME/dev/3rdparty/ziglang/zig
