@@ -64,7 +64,7 @@ update_nvim:
 	git --git-dir=$$HOME/.cfg/ --work-tree=$$HOME add $$HOME/.config/nvim/build_log.txt
 	git --git-dir=$$HOME/.cfg/ --work-tree=$$HOME switch main
 	git --git-dir=$$HOME/.cfg/ --work-tree=$$HOME commit -m "update nvim build_log.txt"
-	git --git-dir=$$HOME/.cfg/ --work-tree=$$HOME push
+	git --git-dir=$$HOME/.cfg/ --work-tree=$$HOME push --set-upstream origin main
 	sudo ln -f install/bin/nvim /usr/local/bin/nvim
 	nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 
@@ -73,7 +73,7 @@ update_antigen:
 	git --git-dir=$$HOME/.cfg/ --work-tree=$$HOME add $$HOME/.config/zsh/antigen.zsh
 	git --git-dir=$$HOME/.cfg/ --work-tree=$$HOME switch main
 	git --git-dir=$$HOME/.cfg/ --work-tree=$$HOME commit -m "update antigen.zsh"
-	git --git-dir=$$HOME/.cfg/ --work-tree=$$HOME push
+	git --git-dir=$$HOME/.cfg/ --work-tree=$$HOME push --set-upstream origin main
 
 zig:
 	mkdir -p $$HOME/dev/3rdparty/ziglang/zig
