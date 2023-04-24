@@ -126,6 +126,8 @@ zk:
 	git clone git@github.com:deforde/notes.git $$HOME/dev/deforde/notes
 	mkdir -p $$HOME/dev/3rdparty/zk
 	curl -L https://github.com/mickael-menu/zk/releases/download/v0.10.1/zk-v0.10.1-linux-amd64.tar.gz | tar -xz -C $$HOME/dev/3rdparty/zk
+	cd $$HOME/dev/deforde/notes
+	$$HOME/dev/3rdparty/zk/zk init
 
 config:
 	git clone --bare git@github.com:deforde/dotfiles.git .cfg
