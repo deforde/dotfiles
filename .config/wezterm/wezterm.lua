@@ -2,7 +2,10 @@ local wezterm = require 'wezterm'
 local config = {}
 
 config.default_domain = 'WSL:Ubuntu'
+
 config.font = wezterm.font 'JetBrains Mono'
+
+config.color_scheme = 'Vs Code Dark+ (Gogh)'
 
 config.keys = {
     {
