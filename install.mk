@@ -24,6 +24,7 @@ general:
 	ripgrep \
 	shellcheck \
 	software-properties-common \
+	unzip \
 	zsh
 	chsh -s /usr/bin/zsh
 
@@ -65,6 +66,9 @@ update_nvim:
 	git --git-dir=$$HOME/.cfg/ --work-tree=$$HOME switch main
 	git --git-dir=$$HOME/.cfg/ --work-tree=$$HOME commit -m "update nvim build_log.txt"
 	git --git-dir=$$HOME/.cfg/ --work-tree=$$HOME push --set-upstream origin main
+	git --git-dir=$$HOME/.cfg/ --work-tree=$$HOME switch sioux
+	git --git-dir=$$HOME/.cfg/ --work-tree=$$HOME rebase main
+	git --git-dir=$$HOME/.cfg/ --work-tree=$$HOME push -f
 	sudo ln -f install/bin/nvim /usr/local/bin/nvim
 	nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 
@@ -74,6 +78,9 @@ update_antigen:
 	git --git-dir=$$HOME/.cfg/ --work-tree=$$HOME switch main
 	git --git-dir=$$HOME/.cfg/ --work-tree=$$HOME commit -m "update antigen.zsh"
 	git --git-dir=$$HOME/.cfg/ --work-tree=$$HOME push --set-upstream origin main
+	git --git-dir=$$HOME/.cfg/ --work-tree=$$HOME switch sioux
+	git --git-dir=$$HOME/.cfg/ --work-tree=$$HOME rebase main
+	git --git-dir=$$HOME/.cfg/ --work-tree=$$HOME push -f
 
 zig:
 	mkdir -p $$HOME/dev/3rdparty/ziglang/zig
@@ -159,3 +166,6 @@ netcoredbg:
 	rm -rf $$HOME/.local/share/nvim/netcoredbg
 	curl -L https://github.com/Samsung/netcoredbg/releases/download/2.0.0-895/netcoredbg-linux-amd64.tar.gz | \
 	tar -xz -C $$HOME/.local/share/nvim
+
+nvm:
+	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash

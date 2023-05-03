@@ -19,5 +19,7 @@
 	path = ~/dev/deforde/.gitconfig
 [includeIf "gitdir:~/dev/3rdparty/"]
 	path = ~/dev/3rdparty/.gitconfig
+[includeIf "gitdir:/mnt/c/sioux/"]
+	path = /mnt/c/sioux/.gitconfig.sioux
 [diff]
 	tool = nvimdiff
