@@ -154,3 +154,8 @@ luajit:
 	tar -xz -C $$HOME/dev/3rdpart/luajit
 	make -C $$HOME/dev/3rdpart/luajit/LuaJIT-2.0.5 && \
 	sudo make -C $$HOME/dev/3rdpart/luajit/LuaJIT-2.0.5 install
+
+netcoredbg:
+	rm -rf $$HOME/.local/share/nvim/netcoredbg
+	curl -L https://github.com/Samsung/netcoredbg/releases/download/2.0.0-895/netcoredbg-linux-amd64.tar.gz | \
+	tar -xz -C $$HOME/.local/share/nvim

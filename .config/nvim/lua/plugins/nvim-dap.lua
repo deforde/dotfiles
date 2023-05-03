@@ -45,7 +45,22 @@ dap.configurations.python = {
       else
         return "/usr/bin/python3"
       end
-    end;
+    end,
   },
 }
 
+dap.adapters.coreclr = {
+  type = "executable",
+  command = vim.env.HOME .. "/.local/share/nvim/netcoredbg/netcoredbg",
+  args = {"--interpreter=vscode"},
+}
+dap.configurations.cs = {
+  {
+    type = "coreclr",
+    name = "launch - netcoredbg",
+    request = "launch",
+    program = function()
+      return vim.fn.input("Path to dll > ", vim.fn.getcwd() .. '/bin/Debug/', 'file')
+    end,
+  },
+}
