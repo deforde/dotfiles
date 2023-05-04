@@ -7,6 +7,10 @@ config.font = wezterm.font 'JetBrains Mono'
 
 config.color_scheme = 'Vs Code Dark+ (Gogh)'
 
+config.colors = {
+    cursor_bg = '#808080',
+}
+
 config.keys = {
     {
         key = 'Enter',
