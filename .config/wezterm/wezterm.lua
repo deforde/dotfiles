@@ -18,6 +18,16 @@ config.keys = {
         action = wezterm.action.SplitHorizontal{domain='DefaultDomain'},
     },
     {
+        key = '{',
+        mods = 'CTRL|SHIFT',
+        action = wezterm.action.ActivatePaneDirection 'Prev',
+    },
+    {
+        key = '}',
+        mods = 'CTRL|SHIFT',
+        action = wezterm.action.ActivatePaneDirection 'Next',
+    },
+    {
         key = 'h',
         mods = 'CTRL|SHIFT',
         action = wezterm.action.ActivatePaneDirection 'Left',
