@@ -149,11 +149,11 @@ kotlin:
 	sudo apt install -y gradle
 
 luajit:
-	mkdir -p $$HOME/dev/3rdpart/luajit
+	mkdir -p $$HOME/dev/3rdparty/luajit
 	curl -L https://luajit.org/download/LuaJIT-2.0.5.tar.gz | \
-	tar -xz -C $$HOME/dev/3rdpart/luajit
-	make -C $$HOME/dev/3rdpart/luajit/LuaJIT-2.0.5 && \
-	sudo make -C $$HOME/dev/3rdpart/luajit/LuaJIT-2.0.5 install
+	tar -xz -C $$HOME/dev/3rdparty/luajit
+	make -C $$HOME/dev/3rdparty/luajit/LuaJIT-2.0.5 && \
+	sudo make -C $$HOME/dev/3rdparty/luajit/LuaJIT-2.0.5 install
 
 netcoredbg:
 	rm -rf $$HOME/.local/share/nvim/netcoredbg
