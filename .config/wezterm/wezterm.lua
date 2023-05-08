@@ -4,6 +4,7 @@ local config = {}
 config.default_domain = 'WSL:Ubuntu'
 
 config.font = wezterm.font 'JetBrains Mono'
+config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
 
 config.color_scheme = 'Vs Code Dark+ (Gogh)'
 
