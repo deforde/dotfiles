@@ -143,7 +143,7 @@ fonts:
 	rm UbuntuMono.zip
 
 nix:
-	curl -L https://nixos.org/nix/install | sh -s -- --daemon
+	curl -L https://nixos.org/nix/install | sh -s -- --no-daemon
 
 kotlin:
 	sudo apt install -y gradle
